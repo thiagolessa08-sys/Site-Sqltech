@@ -104,6 +104,20 @@
   .press-source { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .16em; color: var(--accent); }
   .press-headline { font-size: 13px; line-height: 1.75; color: #34455c; margin: 16px 0 0; }
 
+  /* ---------- CLIENTES ---------- */
+  .clientes { max-width: 1180px; margin: 76px auto 0; background: #fff; border: 1px solid #e6ecf3; padding: 62px 56px 56px; }
+  .clientes-head { text-align: center; max-width: 720px; margin: 0 auto 46px; }
+  .clientes-eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: .24em; color: var(--accent); }
+  .clientes-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; color: #123356; margin: 14px 0 12px; }
+  .clientes-sub { font-size: 12px; line-height: 1.8; color: #8494a6; margin: 0; }
+  .clientes-rule { width: 46px; height: 1px; background: #cfdae7; margin: 22px auto 0; }
+  .logo-wall { display: block; width: 100%; max-width: 980px; height: auto; margin: 0 auto; }
+  .clientes-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 56px; border: 1px solid #e6ecf3; background: #f3f6fa; }
+  .cstat { padding: 30px 18px 34px; text-align: center; border-right: 1px solid #e6ecf3; }
+  .cstat:last-child { border-right: 0; }
+  .cstat-value { font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; color: #123356; line-height: 1; }
+  .cstat-label { font-size: 10px; font-weight: 600; letter-spacing: .18em; color: #8494a6; margin-top: 10px; }
+
   .comp { max-width: 1100px; margin: 70px auto 0; }
   .comp h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 700; color: #123356; margin: 0 0 8px; }
   .comp-lead { font-size: 12.5px; color: #6a7a8e; margin: 0 0 36px; }
@@ -197,6 +211,7 @@
     .timeline { grid-template-columns: repeat(3, 1fr); }
     .steps { grid-template-columns: repeat(2, 1fr); }
     .foot-grid { grid-template-columns: 1fr 1fr; }
+    .clientes { padding: 48px 32px 42px; margin-top: 56px; }
   }
   @media (max-width: 720px) {
     .hero { min-height: 620px; }
@@ -209,6 +224,11 @@
     .svc-card--on { transform: none; }
     .press, .offer, .ai-grid, .timeline, .steps, .pillars, .numbers, .foot-grid { grid-template-columns: 1fr; }
     .foot-bottom { flex-direction: column; gap: 8px; }
+    .clientes { padding: 40px 20px 32px; }
+    .clientes-title { font-size: 26px; }
+    .clientes-stats { grid-template-columns: repeat(2, 1fr); }
+    .cstat:nth-child(2n) { border-right: 0; }
+    .cstat:nth-child(-n+2) { border-bottom: 1px solid #e6ecf3; }
   }
 </style>
 </head>
@@ -358,6 +378,23 @@
           <div class="press-source">COMPUTERWORLD</div>
           <p class="press-headline">Parceria para Business Analytics da SAP em nuvem.</p>
         </div>
+      </div>
+    </div>
+
+    <div class="clientes">
+      <div class="clientes-head">
+        <div class="clientes-eyebrow">QUEM CONFIA NA SQLTECH</div>
+        <h2 class="clientes-title">Grandes marcas, decisões guiadas por dados</h2>
+        <p class="clientes-sub">De bancos e seguradoras à indústria, varejo, saúde e governo — projetos entregues em 16 setores diferentes.</p>
+        <div class="clientes-rule"></div>
+      </div>
+      <img class="logo-wall" src="assets/clientes.png" width="1144" height="928" loading="lazy" decoding="async"
+           alt="Marcas atendidas pela SQLTECH — entre elas Itaú, Bradesco, Citibank, AmBev, Natura, Volkswagen, Nestlé, Johnson &amp; Johnson, Toshiba, Sodexo, Seara, SKY e Prefeitura de São Paulo.">
+      <div class="clientes-stats">
+        <div class="cstat"><div class="cstat-value">150+</div><div class="cstat-label">CLIENTES ATIVOS</div></div>
+        <div class="cstat"><div class="cstat-value">30.000+</div><div class="cstat-label">USUÁRIOS ATENDIDOS</div></div>
+        <div class="cstat"><div class="cstat-value">16</div><div class="cstat-label">INDÚSTRIAS</div></div>
+        <div class="cstat"><div class="cstat-value">28</div><div class="cstat-label">ANOS DE MERCADO</div></div>
       </div>
     </div>
 
