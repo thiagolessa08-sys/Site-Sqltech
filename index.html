@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQLTECH — Transformando dados em decisão há 28 anos</title>
+<meta name="description" content="SQLTECH: Business Intelligence, Engenharia de Dados e Inteligência Artificial aplicada ao negócio. Desde 1998.">
+<link rel="icon" href="assets/hero.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #ffffff; }
+  a { color: #1668d8; text-decoration: none; }
+  a:hover { color: #0b4ea8; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+
+<div style="font-family: Barlow, Helvetica, sans-serif; color: #14243d; background: #fff; overflow-x: hidden">
+
+  <!-- HERO -->
+  <section id="home" data-screen-label="Hero" style="position: relative; min-height: 760px; background: #0a1c33; overflow: hidden">
+    <img data-hero-img="" data-no-reveal="" src="assets/hero.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; transform: scale(1.08); will-change: transform" />
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,22,42,.88) 0%, rgba(11,38,68,.72) 40%, rgba(10,28,51,.94) 100%)"></div>
+    <div style="position: absolute; right: -80px; top: 60px; width: 620px; height: 620px; border-radius: 50%; border: 1px solid rgba(255,255,255,.07); background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 44px), repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 44px)"></div>
+
+    <div style="position: relative; display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 26px 72px 0; max-width: 1440px; margin: 0 auto">
+      <div style="display: flex; align-items: center; gap: 14px">
+        <div style="width: 44px; height: 44px; border: 1.5px solid rgba(255,255,255,.75); display: grid; place-items: center; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; color: #fff; letter-spacing: .04em">SQL</div>
+        <div style="line-height: 1.05">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 23px; font-weight: 700; letter-spacing: .1em; color: #fff">SQLTECH</div>
+          <div style="font-size: 9.5px; letter-spacing: .26em; color: rgba(255,255,255,.6); margin-top: 3px">DADOS · BI · IA APLICADA</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 40px">
+        <div>
+          <div style="color: #fff; font-size: 13.5px; font-weight: 600; letter-spacing: .06em">São Paulo · Brasília · EUA</div>
+          <div style="color: rgba(255,255,255,.5); font-size: 10px; letter-spacing: .16em">BRASIL · ARGENTINA · CHILE · MÉXICO</div>
+        </div>
+        <div style="width: 1px; height: 30px; background: rgba(255,255,255,.18)"></div>
+        <a href="#contato" onClick="{{ goTo }}" style="color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .14em; border: 1px solid rgba(255,255,255,.35); padding: 11px 24px; transition: all .3s ease; cursor: pointer" style-hover="background: #fff; color: #123356; border-color: #fff">FALE CONOSCO</a>
+      </div>
+    </div>
+
+    <nav style="position: relative; max-width: 1440px; margin: 26px auto 0; padding: 0 72px">
+      <div style="display: grid; grid-template-columns: repeat(7, 1fr); border-top: 1px solid rgba(255,255,255,.14); border-bottom: 1px solid rgba(255,255,255,.14)">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="7">
+          <a href="{{ item.href }}" onClick="{{ goTo }}" style="padding: 16px 4px; border-right: 1px solid rgba(255,255,255,.1); transition: background .25s ease; cursor: pointer" style-hover="background: rgba(255,255,255,.09)">
+            <div style="font-size: 12.5px; font-weight: 600; letter-spacing: .12em; color: #fff">{{ item.label }}</div>
+            <div style="font-size: 10px; color: rgba(255,255,255,.45); margin-top: 4px; letter-spacing: .04em">{{ item.sub }}</div>
+          </a>
+        </sc-for>
+      </div>
+    </nav>
+
+    <div style="position: relative; text-align: center; padding: 140px 24px 0">
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; letter-spacing: .42em; color: rgba(255,255,255,.72)">HÁ 28 ANOS</div>
+      <h1 style="font-family: 'Barlow Condensed', sans-serif; font-size: 60px; font-weight: 600; letter-spacing: .08em; color: #fff; margin: 12px 0 18px">TRANSFORMANDO DADOS EM DECISÃO</h1>
+      <p style="max-width: 640px; margin: 0 auto 34px; font-size: 13.5px; line-height: 1.9; color: rgba(255,255,255,.6)">Business Intelligence, Engenharia de Dados e Inteligência Artificial aplicada ao negócio.</p>
+      <a href="#contato" onClick="{{ goTo }}" style="display: inline-block; background: #fff; color: #123356; border-radius: 999px; padding: 15px 46px; cursor: pointer; font-size: 12.5px; font-weight: 700; letter-spacing: .2em; transition: all .3s cubic-bezier(.22,.61,.36,1); box-shadow: 0 8px 24px rgba(0,0,0,.18)" style-hover="background: #1668d8; color: #fff; transform: translateY(-3px); box-shadow: 0 14px 32px rgba(22,104,216,.45)">AGENDE UMA CONVERSA</a>
+    </div>
+  </section>
+
+  <!-- SERVICE STRIP -->
+  <section data-screen-label="Serviços strip" style="position: relative; background: #fff; padding: 0 72px">
+    <div style="max-width: 1180px; margin: -74px auto 0; background: #fff; box-shadow: 0 24px 60px rgba(16,44,78,.16); display: grid; grid-template-columns: repeat(5, 1fr); position: relative; z-index: 2">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+        <div style="padding: 34px 18px 40px; text-align: center; border-right: 1px solid #eef2f7; background: {{ s.bg }}; color: {{ s.fg }}; position: relative; transform: {{ s.lift }}; transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease, background .35s ease; cursor: pointer" style-hover="transform: translateY(-8px) scale(1.04); box-shadow: 0 18px 36px rgba(16,44,78,.18); z-index: 3">
+          <div style="font-size: 26px; line-height: 1; opacity: .9">{{ s.icon }}</div>
+          <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .16em; margin-top: 20px">{{ s.title }}</div>
+          <div style="font-size: 10.5px; letter-spacing: .06em; margin-top: 6px; opacity: .62">{{ s.sub }}</div>
+          <sc-if value="{{ s.active }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%); width: 36px; height: 36px; border-radius: 50%; background: #fff; color: #1668d8; display: grid; place-items: center; box-shadow: 0 8px 18px rgba(16,44,78,.18); font-size: 14px">→</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- A EMPRESA -->
+  <section id="empresa" data-screen-label="A empresa" style="background: #fff; padding: 96px 72px 90px">
+    <h2 style="text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; color: #123356; margin: 0 0 44px">Por que a SQLTECH?</h2>
+
+    <div style="max-width: 760px; margin: 0 auto">
+      <div style="display: grid; grid-template-columns: repeat(3,1fr); text-align: center; gap: 12px">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+          <div style="font-size: 12.5px; font-weight: 600; letter-spacing: .06em; color: {{ p.color }}; line-height: 1.5">{{ p.label }}</div>
+        </sc-for>
+      </div>
+      <div style="position: relative; margin-top: 20px; height: 20px">
+        <div style="position: absolute; left: 16%; right: 16%; top: 9px; height: 1px; background: #d9e2ee"></div>
+        <div style="position: absolute; left: 16%; top: 4px; width: 11px; height: 11px; border-radius: 50%; background: #cfdae7; transform: translateX(-50%)"></div>
+        <div style="position: absolute; left: 50%; top: 0; width: 19px; height: 19px; border-radius: 50%; background: #1668d8; transform: translateX(-50%); box-shadow: 0 0 0 6px rgba(22,104,216,.12)"></div>
+        <div style="position: absolute; left: 84%; top: 4px; width: 11px; height: 11px; border-radius: 50%; background: #cfdae7; transform: translateX(-50%)"></div>
+      </div>
+    </div>
+
+    <div style="max-width: 1100px; margin: 64px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center">
+      <div style="font-size: 13.5px; line-height: 2; color: #5b6b80; text-wrap: pretty; display: grid; gap: 20px">
+        <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .2em; color: #1668d8">01 · CONHEÇA A SQLTECH</div>
+        <p style="margin: 0">Há quase três décadas dedicada ao desenvolvimento e à implementação de soluções de Business Intelligence, Analytics e Dados para grandes organizações.</p>
+        <p style="margin: 0">Fundada em 1998, a SQLTECH atende hoje quatro países — Brasil, Argentina, Chile e México — a partir de três escritórios: São Paulo, Brasília e Estados Unidos. Em 2025, crescimento de +22%.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e6ecf3; border-left: 1px solid #e6ecf3">
+        <sc-for list="{{ numbers }}" as="n" hint-placeholder-count="6">
+          <div style="border-right: 1px solid #e6ecf3; border-bottom: 1px solid #e6ecf3; padding: 26px 18px; transition: background .3s ease" style-hover="background: #f3f6fa">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; color: #123356; line-height: 1">{{ n.value }}</div>
+            <div style="font-size: 11px; color: #8494a6; margin-top: 8px; line-height: 1.5">{{ n.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="max-width: 1100px; margin: 64px auto 0; border-top: 1px solid #e6ecf3; padding-top: 34px">
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: .22em; color: #9aa8b8; margin-bottom: 22px">PARCERIAS ESTRATÉGICAS · LÍDERES EM SEUS SEGMENTOS (GARTNER &amp; FORRESTER)</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px">
+        <sc-for list="{{ partners }}" as="p" hint-placeholder-count="5">
+          <div style="border: 1px solid #dde5ee; padding: 14px 34px; font-family: 'Barlow Condensed', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: .1em; color: #4d5f74; transition: all .3s ease" style-hover="border-color: #1668d8; color: #1668d8; transform: translateY(-3px)">{{ p }}</div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCADO -->
+  <section id="mercado" data-screen-label="Mercado" style="background: #f3f6fa; padding: 92px 72px">
+    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.4fr; gap: 68px">
+      <div>
+        <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .2em; color: #1668d8; margin-bottom: 18px">02 · POSIÇÃO NO MERCADO</div>
+        <h2 style="font-family: 'Barlow Condensed', sans-serif; font-size: 34px; line-height: 1.15; font-weight: 700; color: #123356; margin: 0 0 22px">Reconhecimento<br />do mercado.<br />Escala regional.</h2>
+        <p style="font-size: 12.5px; line-height: 2; color: #6a7a8e; margin: 0; text-wrap: pretty">Mais de 30.000 usuários atendidos, 150+ clientes e 16 indústrias — sustentados por parcerias com os fabricantes líderes de cada segmento e por uma prática técnica construída desde 1998.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px">
+        <sc-for list="{{ press }}" as="c" hint-placeholder-count="3">
+          <div style="background: #fff; padding: 30px 24px 28px; border-bottom: 3px solid #1668d8; transition: transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease" style-hover="transform: translateY(-6px); box-shadow: 0 18px 34px rgba(16,44,78,.12)">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .16em; color: #1668d8">{{ c.source }}</div>
+            <p style="font-size: 13px; line-height: 1.75; color: #34455c; margin: 16px 0 0">{{ c.headline }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="max-width: 1100px; margin: 70px auto 0">
+      <div id="competencias" style="font-size: 11.5px; font-weight: 700; letter-spacing: .2em; color: #1668d8; margin-bottom: 8px">03 · COMPETÊNCIAS TECNOLÓGICAS</div>
+      <h3 style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 700; color: #123356; margin: 0 0 8px">De 1998 à era da IA</h3>
+      <p style="font-size: 12.5px; color: #6a7a8e; margin: 0 0 36px">Uma stack que evolui há quase três décadas — sempre na fronteira de dados e analytics.</p>
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid #d9e2ee">
+        <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="6">
+          <div style="padding: 26px 16px 0; border-right: 1px solid #e6ecf3; position: relative">
+            <div style="position: absolute; top: -5px; left: 16px; width: 9px; height: 9px; border-radius: 50%; background: {{ t.dot }}"></div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; color: #123356; letter-spacing: .06em">{{ t.era }}</div>
+            <div style="font-size: 10.5px; font-weight: 700; letter-spacing: .18em; color: #1668d8; margin: 6px 0 12px">{{ t.tag }}</div>
+            <div style="font-size: 11.5px; line-height: 1.85; color: #7a8899; white-space: pre-line">{{ t.stack }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" data-screen-label="Serviços" style="background: #fff; padding: 92px 72px">
+    <div style="max-width: 1100px; margin: 0 auto">
+      <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .2em; color: #1668d8; margin-bottom: 8px">04 · NOSSOS SERVIÇOS</div>
+      <h2 style="font-family: 'Barlow Condensed', sans-serif; font-size: 34px; font-weight: 700; color: #123356; margin: 0 0 40px">Dados, BI e processos</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px">
+        <sc-for list="{{ offer }}" as="o" hint-placeholder-count="3">
+          <div style="border: 1px solid #e2e9f1; padding: 32px 28px 34px; transition: border-color .3s ease, transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s ease" style-hover="border-color: #1668d8; transform: translateY(-6px); box-shadow: 0 18px 34px rgba(16,44,78,.10)">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 21px; font-weight: 700; color: #123356; letter-spacing: .03em">{{ o.title }}</div>
+            <div style="width: 34px; height: 2px; background: #1668d8; margin: 14px 0 20px"></div>
+            <div style="display: grid; gap: 10px">
+              <sc-for list="{{ o.items }}" as="it" hint-placeholder-count="6">
+                <div style="font-size: 12px; line-height: 1.6; color: #6a7a8e">— {{ it }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px">
+        <div style="background: #f3f6fa; padding: 32px 30px">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 21px; font-weight: 700; color: #123356">Big Data</div>
+          <p style="font-size: 12.5px; line-height: 1.9; color: #6a7a8e; margin: 12px 0 20px">Análise e interpretação de grandes volumes e variedade de dados — inclusive não estruturados e em alta velocidade.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{ bigdata }}" as="b" hint-placeholder-count="4">
+              <div style="border: 1px solid #cfdae7; padding: 7px 16px; font-size: 11px; letter-spacing: .1em; color: #4d5f74">{{ b }}</div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background: #10294a; padding: 32px 30px; color: #fff">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 21px; font-weight: 700">Inteligência Artificial aplicada</div>
+          <p style="font-size: 12.5px; line-height: 1.9; color: rgba(255,255,255,.6); margin: 12px 0 20px">Do caso de uso à produção — com governança, segurança e integração aos sistemas que você já usa.</p>
+          <a href="#ia" onClick="{{ goTo }}" style="font-size: 11.5px; font-weight: 700; letter-spacing: .18em; color: #fff; border-bottom: 1px solid rgba(255,255,255,.4); padding-bottom: 4px; cursor: pointer" style-hover="color: #7fb2ff">VER SOLUÇÕES DE IA →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IA -->
+  <section id="ia" data-screen-label="IA aplicada" style="position: relative; background: #10294a; padding: 96px 72px; overflow: hidden">
+    <div style="position: absolute; right: -140px; top: 40px; width: 620px; height: 620px; border-radius: 50%; border: 1px solid rgba(255,255,255,.07); background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 40px), repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 40px)"></div>
+    <div style="position: relative; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 0.8fr 2fr; gap: 56px">
+      <div>
+        <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .2em; color: #7fb2ff; margin-bottom: 18px">05 · IA APLICADA</div>
+        <h2 style="font-family: 'Barlow Condensed', sans-serif; font-size: 34px; line-height: 1.2; font-weight: 700; color: #fff; margin: 0 0 20px">28 anos<br />transformando<br />dados em decisão.</h2>
+        <p style="font-size: 12.5px; line-height: 1.95; color: rgba(255,255,255,.5); margin: 0">Implementamos IA de ponta a ponta — do caso de uso à produção — com governança, segurança e integração aos sistemas que a empresa já usa.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 26px">
+        <sc-for list="{{ ai }}" as="a" hint-placeholder-count="6">
+          <div style="border: 1px solid rgba(255,255,255,.18); padding: 28px 24px; background: {{ a.bg }}; transition: border-color .3s ease, background .3s ease, transform .35s cubic-bezier(.22,.61,.36,1)" style-hover="border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.07); transform: translateY(-6px)">
+            <div style="font-size: 11.5px; font-weight: 700; letter-spacing: .16em; color: #fff; margin-bottom: 14px">{{ a.title }}</div>
+            <div style="display: grid; gap: 9px">
+              <sc-for list="{{ a.items }}" as="it" hint-placeholder-count="4">
+                <div style="font-size: 11.5px; line-height: 1.7; color: rgba(255,255,255,.5)">— {{ it }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section data-screen-label="Como implementamos" style="background: #fff; padding: 90px 72px">
+    <div style="max-width: 1100px; margin: 0 auto">
+      <h2 style="font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; color: #123356; margin: 0 0 8px">Como implementamos IA</h2>
+      <p style="font-size: 12.5px; color: #6a7a8e; margin: 0 0 40px">Do caso de uso à produção — com integração segura e governança em cada etapa.</p>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid #d9e2ee">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+          <div style="padding: 28px 20px 0; border-right: 1px solid #e6ecf3; position: relative; transition: transform .35s cubic-bezier(.22,.61,.36,1)" style-hover="transform: translateY(-6px)">
+            <div style="position: absolute; top: -5px; left: 20px; width: 9px; height: 9px; border-radius: 50%; background: #1668d8"></div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 700; color: #cfdae7; line-height: 1">{{ s.n }}</div>
+            <div style="font-size: 13px; font-weight: 700; color: #123356; margin: 10px 0 8px">{{ s.title }}</div>
+            <div style="font-size: 11.5px; line-height: 1.8; color: #7a8899">{{ s.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato" data-screen-label="Footer" style="background: #07182d; padding: 74px 72px 46px; border-top: 4px solid #1668d8">
+    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.3fr; gap: 48px">
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 22px">
+          <div style="width: 40px; height: 40px; border: 1.5px solid rgba(255,255,255,.7); display: grid; place-items: center; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; color: #fff">SQL</div>
+          <div style="line-height: 1.05">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 19px; font-weight: 700; letter-spacing: .1em; color: #fff">SQLTECH</div>
+            <div style="font-size: 8.5px; letter-spacing: .24em; color: rgba(255,255,255,.5); margin-top: 3px">DADOS · BI · IA APLICADA</div>
+          </div>
+        </div>
+        <p style="font-size: 11.5px; line-height: 1.95; color: rgba(255,255,255,.45); margin: 0 0 26px; max-width: 260px">Vamos transformar os dados da sua empresa em decisão — com BI, engenharia de dados e IA aplicada.</p>
+        <div style="display: grid; gap: 8px">
+          <a href="#" style="font-size: 11.5px; color: rgba(255,255,255,.65)" style-hover="color: #fff">www.sqltech.com.br</a>
+          <a href="#" style="font-size: 11.5px; color: rgba(255,255,255,.65)" style-hover="color: #fff">linkedin.com/company/sqltech</a>
+        </div>
+      </div>
+      <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="2">
+        <div>
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #fff; margin-bottom: 20px">{{ col.title }}</div>
+          <div style="display: grid; gap: 12px">
+            <sc-for list="{{ col.items }}" as="it" hint-placeholder-count="6">
+              <a href="#" style="font-size: 11.5px; color: rgba(255,255,255,.5); letter-spacing: .04em; transition: color .25s ease, transform .25s ease; display: inline-block" style-hover="color: #fff; transform: translateX(4px)">› {{ it }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+      <div>
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: .14em; color: #fff; margin-bottom: 20px">Newsletter</div>
+        <p style="font-size: 11.5px; line-height: 1.9; color: rgba(255,255,255,.45); margin: 0 0 22px">Receba conteúdos sobre dados, BI e IA aplicada ao negócio.</p>
+        <div style="display: flex">
+          <input placeholder="Seu e-mail corporativo" style="flex: 1; background: #fff; border: 0; padding: 12px 14px; font-family: Barlow, sans-serif; font-size: 11.5px; color: #123356; outline: none" />
+          <button style="background: #1668d8; border: 0; color: #fff; width: 44px; font-size: 14px; cursor: pointer" style-hover="background: #0b4ea8">→</button>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1100px; margin: 52px auto 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; font-size: 10.5px; letter-spacing: .1em; color: rgba(255,255,255,.3)">
+      <div>© 2026 SQLTECH · DESDE 1998</div>
+      <div>SÃO PAULO · BRASÍLIA · EUA</div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1668d8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#1668d8&quot;,&quot;#0f8b8d&quot;,&quot;#c2410c&quot;,&quot;#4338ca&quot;]}}">
+class Component extends DCLogic {
+  state = { active: 4 };
+
+  componentDidMount() {
+    this._targets = [];
+    this._setupReveal();
+    this._raf = requestAnimationFrame(this._tick);
+    this._safety = setTimeout(() => this._revealAll(), 4000);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._safety);
+  }
+  componentDidUpdate() { this._setupReveal(); }
+
+  _revealAll() {
+    (this._targets || []).forEach((el) => this._show(el));
+  }
+  _show(el) {
+    if (el.__revealed) return;
+    el.__revealed = true;
+    el.style.transitionDelay = (el.__delay || 0) + "ms";
+    el.style.opacity = "1";
+    el.style.transform = "none";
+  }
+
+  _tick = () => {
+    const vh = window.innerHeight || 800;
+    const doc = document.scrollingElement || document.documentElement;
+    const y = (doc && doc.scrollTop) || window.scrollY || 0;
+    const hero = document.querySelector("[data-hero-img]");
+    if (hero) hero.style.transform = "translateY(" + y * 0.18 + "px) scale(1.08)";
+    const list = this._targets || [];
+    for (let i = 0; i < list.length; i++) {
+      const el = list[i];
+      if (el.__revealed) continue;
+      const r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > 0) this._show(el);
+    }
+    this._raf = requestAnimationFrame(this._tick);
+  };
+
+  _setupReveal() {
+    const sel = [
+      "[data-screen-label] > div", "[data-screen-label] > nav",
+      "[data-screen-label] h1", "[data-screen-label] h2", "[data-screen-label] h3",
+      "[data-screen-label] > p",
+    ].join(",");
+    const nodes = Array.from(document.querySelectorAll(sel)).filter(
+      (n) => !n.hasAttribute("data-no-reveal") && !n.__revealed && n.offsetHeight > 0
+    );
+    if (!this._targets) this._targets = [];
+    nodes.forEach((n, i) => {
+      if (n.__watched) return;
+      n.__watched = true;
+      n.__delay = Math.min(i % 6, 5) * 70;
+      n.style.opacity = "0";
+      n.style.transform = "translateY(26px)";
+      n.style.transition = "opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1)";
+      this._targets.push(n);
+    });
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? "#1668d8";
+    const nav = [
+      { label: "HOME", sub: "Início", href: "#home" },
+      { label: "A EMPRESA", sub: "Conheça a SQLTECH", href: "#empresa" },
+      { label: "MERCADO", sub: "Posição e clientes", href: "#mercado" },
+      { label: "COMPETÊNCIAS", sub: "Stack tecnológica", href: "#competencias" },
+      { label: "SERVIÇOS", sub: "O que fazemos", href: "#servicos" },
+      { label: "IA APLICADA", sub: "Em destaque", href: "#ia" },
+      { label: "CONTATO", sub: "Fale conosco", href: "#contato" },
+    ];
+    const goTo = (e) => {
+      const href = e.currentTarget.getAttribute("href") || "";
+      if (href.charAt(0) !== "#") return;
+      e.preventDefault();
+      const el = document.getElementById(href.slice(1));
+      if (!el) return;
+      const doc = document.scrollingElement || document.documentElement;
+      const y = (doc.scrollTop || 0) + el.getBoundingClientRect().top - 20;
+      if (typeof doc.scrollTo === "function") doc.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
+      else doc.scrollTop = Math.max(y, 0);
+    };
+    const base = [
+      { icon: "▤", title: "DATABASE SERVICES", sub: "Infra e performance" },
+      { icon: "◧", title: "ANALYTICS / BI", sub: "Consultoria end-to-end" },
+      { icon: "◈", title: "PROCESS MINING", sub: "Processos reais" },
+      { icon: "≋", title: "BIG DATA", sub: "Alto volume e variedade" },
+      { icon: "◭", title: "IA APLICADA", sub: "Do caso de uso à produção" },
+    ];
+    const services = base.map((s, i) => {
+      const on = i === this.state.active;
+      return Object.assign({}, s, {
+        active: on, bg: on ? accent : "#ffffff", fg: on ? "#ffffff" : "#123356",
+        lift: on ? "scale(1.06)" : "none",
+      });
+    });
+    const pillars = [
+      { label: "28 anos de mercado", color: "#9aa8b8" },
+      { label: "Parcerias com líderes de mercado", color: accent },
+      { label: "IA aplicada ao negócio", color: "#9aa8b8" },
+    ];
+    const numbers = [
+      { value: "30.000+", label: "usuários atendidos" },
+      { value: "150+", label: "clientes" },
+      { value: "4", label: "países" },
+      { value: "16+", label: "indústrias atendidas" },
+      { value: "5", label: "parcerias estratégicas" },
+      { value: "8", label: "prêmios" },
+    ];
+    const partners = ["SAP", "Qlik", "Oracle", "Celonis", "H2O"];
+    const press = [
+      { source: "VALOR ECONÔMICO", headline: "Software SAP vendido sob a marca da SQLTECH." },
+      { source: "G1", headline: "Programa de Trainee da SQLTECH." },
+      { source: "COMPUTERWORLD", headline: "Parceria para Business Analytics da SAP em nuvem." },
+    ];
+    const timeline = [
+      { era: "1998", tag: "FUNDAÇÃO", stack: "SAP IQ / Sybase\nOracle", dot: "#cfdae7" },
+      { era: "BI & EPM", tag: "DECISÃO", stack: "SAP BO / SAC\nSAP SSM\nSAP BPC", dot: "#cfdae7" },
+      { era: "Integração", tag: "DADOS", stack: "Informatica\nPowerCenter\nData Services", dot: "#cfdae7" },
+      { era: "Data Warehouse", tag: "IN-MEMORY", stack: "SAP BW / SAP HANA\nOracle Exadata", dot: "#cfdae7" },
+      { era: "Analytics", tag: "AVANÇADO", stack: "Qlik / Celonis / H2O", dot: "#cfdae7" },
+      { era: "2025", tag: "ERA DA IA", stack: "Engenharia de dados moderna\nLLMs / IA Generativa\nAgentes de IA · RAG", dot: accent },
+    ];
+    const offer = [
+      { title: "Database Services", items: ["Migração de servidores", "Instalação, configuração e suporte", "Integração de sistemas heterogêneos", "Performance & tuning", "Movimentação dinâmica de dados", "Alto volume de dados (TB)"] },
+      { title: "Analytics / BI", items: ["Consultoria de BI end-to-end", "Definição do modelo de negócio", "Modelagem relacional e multidimensional", "Seleção de tecnologia", "Implementação", "Gestão do projeto"] },
+      { title: "Process Mining", items: ["Insights a partir de logs de eventos reais", "Auditar, analisar e melhorar processos", "Visão de conformidade e desempenho", "Identificação de gargalos e retrabalho", "Base factual para automação"] },
+    ];
+    const bigdata = ["Estratégia", "Produtividade", "Redução de custo", "Decisão inteligente"];
+    const ai = [
+      { title: "IA NO ATENDIMENTO", items: ["Agentes por chat e voz (WhatsApp, site, telefone) 24/7", "Triagem, qualificação e roteamento automático", "Secretária virtual: agendamento e lembretes", "Conectado a CRM, ERP e bases internas via RAG", "Escalonamento inteligente para o humano", "Resumo e análise de sentimento das conversas"] },
+      { title: "ANÁLISE DE DOCUMENTOS", items: ["Extração de NF-e, contratos, propostas e faturas", "OCR + LLM para documentos digitalizados", "Classificação, validação e conferência automática", "Conferência fiscal e apoio a compliance (SPED)", "Extração de cláusulas e riscos em contratos", "Busca semântica em grandes acervos"] },
+      { title: "IA ANALÍTICA", items: ["Analytics aumentado com insights em linguagem natural", "\"Pergunte aos seus dados\" — BI conversacional (text-to-SQL)", "Modelos preditivos: demanda, churn, inadimplência, receita", "Detecção de anomalias e desvios", "AutoML para acelerar criação e deploy", "IA sobre process mining"] },
+      { title: "ANÁLISE DE PROCESSOS", items: ["Descoberta automática do fluxo real (ERP, CRM, SAP)", "Identificação de gargalos e retrabalho", "Análise de causa raiz explicada em linguagem natural", "Verificação de conformidade (compliance)", "Recomendações de automação priorizadas por impacto"] },
+      { title: "AUTOMAÇÃO E COPILOTOS", items: ["Orquestração de tarefas e processos com agentes", "Copilotos por área: jurídico, financeiro, comercial, operações", "Transcrição e diarização de calls e reuniões", "Relatórios automáticos a partir dos próprios dados"] },
+      { title: "LLMs EM PRODUÇÃO", items: ["Base de conhecimento (RAG) sobre manuais e políticas", "Integração via API dentro do que o cliente já usa", "Governança, segurança e LGPD", "Monitoramento e evolução contínua"] },
+    ].map((a, i) => Object.assign({}, a, { bg: i === 0 ? "rgba(255,255,255,.05)" : "transparent" }));
+    const steps = [
+      { n: "01", title: "Descoberta & ROI", body: "Mapeamento do caso de uso e do retorno esperado." },
+      { n: "02", title: "Prova de conceito", body: "Validação rápida com dados reais antes de escalar." },
+      { n: "03", title: "Integração segura", body: "Conexão aos dados e sistemas que a empresa já usa." },
+      { n: "04", title: "Governança & LGPD", body: "Privacidade, controle de qualidade e segurança." },
+      { n: "05", title: "Produção & evolução", body: "Monitoramento e melhoria contínua em operação." },
+    ];
+    const footerCols = [
+      { title: "Serviços", items: ["Database Services", "Analytics / BI", "Process Mining", "Big Data", "Engenharia de Dados", "IA Aplicada"] },
+      { title: "IA Aplicada", items: ["IA no atendimento", "Análise de documentos", "IA analítica", "Análise de processos", "Copilotos por área", "LLMs em produção"] },
+    ];
+    return { nav, goTo, services, pillars, numbers, partners, press, timeline, offer, bigdata, ai, steps, footerCols };
+  }
+}
+
+</script>
+</body>
+</html>
