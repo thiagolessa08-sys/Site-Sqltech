@@ -31,9 +31,7 @@
 
   .topbar { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 26px 72px 0; max-width: 1440px; margin: 0 auto; }
   .brand { display: flex; align-items: center; gap: 14px; }
-  .brand-mark { width: 44px; height: 44px; border: 1.5px solid rgba(255,255,255,.75); display: grid; place-items: center; font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; color: #fff; letter-spacing: .04em; }
-  .brand-name { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 700; letter-spacing: .1em; color: #fff; }
-  .brand-tag { font-size: 10.5px; letter-spacing: .26em; color: rgba(255,255,255,.6); margin-top: 3px; }
+  .brand-logo { display: block; height: 46px; width: auto; }
   .topbar-right { display: flex; align-items: center; gap: 40px; }
   .loc-main { color: #fff; font-size: 14.5px; font-weight: 600; letter-spacing: .06em; }
   .vrule { width: 1px; height: 30px; background: rgba(255,255,255,.18); }
@@ -242,6 +240,7 @@
     .hero-copy { padding-top: 90px; }
     .hero-title { font-size: 39px; }
     .topbar { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .brand-logo { height: 38px; }
     .topbar-right { gap: 20px; flex-wrap: wrap; }
     .nav-grid { grid-template-columns: repeat(2, 1fr); }
     .svc-grid { grid-template-columns: 1fr; margin-top: -40px; }
@@ -267,13 +266,10 @@
     <div class="orb orb--hero"></div>
 
     <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark">SQL</div>
-        <div style="line-height: 1.05">
-          <div class="brand-name">SQLTECH</div>
-          <div class="brand-tag">DADOS · BI · IA APLICADA</div>
-        </div>
-      </div>
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="assets/logo-branco.png" width="1473" height="351"
+             alt="SQLTECH">
+      </a>
       <div class="topbar-right">
         <div class="loc-main">São Paulo · Brasília · EUA</div>
         <div class="vrule"></div>

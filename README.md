@@ -10,6 +10,7 @@ Site institucional estático. HTML puro — sem build, sem framework e sem depen
 ## Estrutura
 - `index.html` — página completa: marcação, CSS e o script de rolagem/animação embutidos
 - `assets/hero.png` — imagem do cabeçalho
+- `assets/logo-branco.png` — logo da SQLTECH, no topo da página
 - `assets/clientes.png` — painel de logos da seção "Quem confia na SQLTECH"
 - `.nojekyll` — evita processamento Jekyll
 
