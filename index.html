@@ -35,6 +35,12 @@
   .topbar-right { display: flex; align-items: center; gap: 40px; }
   .loc-main { color: #fff; font-size: 14.5px; font-weight: 600; letter-spacing: .06em; }
   .vrule { width: 1px; height: 30px; background: rgba(255,255,255,.18); }
+  .lang { display: flex; align-items: center; gap: 3px; }
+  .lang-btn { background: transparent; border: 0; padding: 5px 7px; font-family: Barlow, sans-serif;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .1em; color: rgba(255,255,255,.5);
+    cursor: pointer; transition: color .25s ease; }
+  .lang-btn:hover { color: #fff; }
+  .lang-btn[aria-current="true"] { color: #fff; box-shadow: inset 0 -1px 0 #fff; }
   .btn-outline { color: #fff; font-size: 13.5px; font-weight: 600; letter-spacing: .14em; border: 1px solid rgba(255,255,255,.35); padding: 11px 24px; transition: all .3s ease; cursor: pointer; }
   .btn-outline:hover { background: #fff; color: #123356; border-color: #fff; }
 
@@ -271,29 +277,35 @@
              alt="SQLTECH">
       </a>
       <div class="topbar-right">
-        <div class="loc-main">São Paulo · Brasília · EUA</div>
+        <div class="lang" role="group" data-i18n-al="idioma.grupo" aria-label="Idioma">
+          <button class="lang-btn" type="button" data-lang="pt">PT</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="es">ES</button>
+        </div>
         <div class="vrule"></div>
-        <a class="btn-outline" href="#contato">FALE CONOSCO</a>
+        <div class="loc-main" data-i18n="topo.local">São Paulo · Brasília · EUA</div>
+        <div class="vrule"></div>
+        <a class="btn-outline" href="#contato" data-i18n="topo.contato">FALE CONOSCO</a>
       </div>
     </div>
 
     <nav class="nav">
       <div class="nav-grid">
-        <a class="nav-item" href="#home"><div class="nav-label">HOME</div><div class="nav-sub">Início</div></a>
-        <a class="nav-item" href="#empresa"><div class="nav-label">A EMPRESA</div><div class="nav-sub">Conheça a SQLTECH</div></a>
-        <a class="nav-item" href="#mercado"><div class="nav-label">MERCADO</div><div class="nav-sub">Posição e clientes</div></a>
-        <a class="nav-item" href="#competencias"><div class="nav-label">COMPETÊNCIAS</div><div class="nav-sub">Stack tecnológica</div></a>
-        <a class="nav-item" href="#servicos"><div class="nav-label">SERVIÇOS</div><div class="nav-sub">O que fazemos</div></a>
-        <a class="nav-item" href="#ia"><div class="nav-label">IA APLICADA</div><div class="nav-sub">Em destaque</div></a>
-        <a class="nav-item" href="#contato"><div class="nav-label">CONTATO</div><div class="nav-sub">Fale conosco</div></a>
+        <a class="nav-item" href="#home"><div class="nav-label" data-i18n="nav.1">HOME</div><div class="nav-sub" data-i18n="nav.1s">Início</div></a>
+        <a class="nav-item" href="#empresa"><div class="nav-label" data-i18n="nav.2">A EMPRESA</div><div class="nav-sub" data-i18n="nav.2s">Conheça a SQLTECH</div></a>
+        <a class="nav-item" href="#mercado"><div class="nav-label" data-i18n="nav.3">MERCADO</div><div class="nav-sub" data-i18n="nav.3s">Posição e clientes</div></a>
+        <a class="nav-item" href="#competencias"><div class="nav-label" data-i18n="nav.4">COMPETÊNCIAS</div><div class="nav-sub" data-i18n="nav.4s">Stack tecnológica</div></a>
+        <a class="nav-item" href="#servicos"><div class="nav-label" data-i18n="nav.5">SERVIÇOS</div><div class="nav-sub" data-i18n="nav.5s">O que fazemos</div></a>
+        <a class="nav-item" href="#ia"><div class="nav-label" data-i18n="nav.6">IA APLICADA</div><div class="nav-sub" data-i18n="nav.6s">Em destaque</div></a>
+        <a class="nav-item" href="#contato"><div class="nav-label" data-i18n="nav.7">CONTATO</div><div class="nav-sub" data-i18n="nav.7s">Fale conosco</div></a>
       </div>
     </nav>
 
     <div class="hero-copy">
-      <div class="hero-eyebrow">HÁ 28 ANOS</div>
-      <h1 class="hero-title">TRANSFORMANDO DADOS EM DECISÃO</h1>
-      <p class="hero-lead">Business Intelligence, Engenharia de Dados e Inteligência Artificial aplicada ao negócio.</p>
-      <a class="btn-cta" href="#contato">AGENDE UMA CONVERSA</a>
+      <div class="hero-eyebrow" data-i18n="hero.olho">HÁ 28 ANOS</div>
+      <h1 class="hero-title" data-i18n="hero.titulo">TRANSFORMANDO DADOS EM DECISÃO</h1>
+      <p class="hero-lead" data-i18n="hero.lead">Business Intelligence, Engenharia de Dados e Inteligência Artificial aplicada ao negócio.</p>
+      <a class="btn-cta" href="#contato" data-i18n="hero.cta">AGENDE UMA CONVERSA</a>
     </div>
   </section>
 
@@ -303,27 +315,27 @@
       <div class="svc-card">
         <div class="svc-icon">▤</div>
         <div class="svc-title">DATABASE SERVICES</div>
-        <div class="svc-sub">Infra e performance</div>
+        <div class="svc-sub" data-i18n="fx.1s">Infra e performance</div>
       </div>
       <div class="svc-card">
         <div class="svc-icon">◧</div>
         <div class="svc-title">ANALYTICS / BI</div>
-        <div class="svc-sub">Consultoria end-to-end</div>
+        <div class="svc-sub" data-i18n="fx.2s">Consultoria end-to-end</div>
       </div>
       <div class="svc-card">
         <div class="svc-icon">◈</div>
         <div class="svc-title">PROCESS MINING</div>
-        <div class="svc-sub">Processos reais</div>
+        <div class="svc-sub" data-i18n="fx.3s">Processos reais</div>
       </div>
       <div class="svc-card">
         <div class="svc-icon">≋</div>
         <div class="svc-title">BIG DATA</div>
-        <div class="svc-sub">Alto volume e variedade</div>
+        <div class="svc-sub" data-i18n="fx.4s">Alto volume e variedade</div>
       </div>
       <div class="svc-card svc-card--on">
         <div class="svc-icon">◭</div>
-        <div class="svc-title">IA APLICADA</div>
-        <div class="svc-sub">Do caso de uso à produção</div>
+        <div class="svc-title" data-i18n="fx.5">IA APLICADA</div>
+        <div class="svc-sub" data-i18n="fx.5s">Do caso de uso à produção</div>
         <div class="svc-arrow">→</div>
       </div>
     </div>
@@ -331,13 +343,13 @@
 
   <!-- A EMPRESA -->
   <section id="empresa" class="sec-empresa" data-screen-label="A empresa">
-    <h2 class="sec-title">Por que a SQLTECH?</h2>
+    <h2 class="sec-title" data-i18n="emp.titulo">Por que a SQLTECH?</h2>
 
     <div class="pillars-wrap">
       <div class="pillars">
-        <div class="pillar" style="color: #9aa8b8">28 anos de mercado</div>
-        <div class="pillar" style="color: #1668d8">Parcerias com líderes de mercado</div>
-        <div class="pillar" style="color: #9aa8b8">IA aplicada ao negócio</div>
+        <div class="pillar" style="color: #9aa8b8" data-i18n="emp.p1">28 anos de mercado</div>
+        <div class="pillar" style="color: #1668d8" data-i18n="emp.p2">Parcerias com líderes de mercado</div>
+        <div class="pillar" style="color: #9aa8b8" data-i18n="emp.p3">IA aplicada ao negócio</div>
       </div>
       <div class="rail">
         <div class="rail-line"></div>
@@ -349,22 +361,22 @@
 
     <div class="about">
       <div class="about-copy">
-        <div class="eyebrow">01 · CONHEÇA A SQLTECH</div>
-        <p>Há quase três décadas dedicada ao desenvolvimento e à implementação de soluções de Business Intelligence, Analytics e Dados para grandes organizações.</p>
-        <p>Fundada em 1998, a SQLTECH atende hoje quatro países — Brasil, Argentina, Chile e México — a partir de três escritórios: São Paulo, Brasília e Estados Unidos. Em 2025, crescimento de +22%.</p>
+        <div class="eyebrow" data-i18n="emp.olho">01 · CONHEÇA A SQLTECH</div>
+        <p data-i18n="emp.t1">Há quase três décadas dedicada ao desenvolvimento e à implementação de soluções de Business Intelligence, Analytics e Dados para grandes organizações.</p>
+        <p data-i18n="emp.t2">Fundada em 1998, a SQLTECH atende hoje quatro países — Brasil, Argentina, Chile e México — a partir de três escritórios: São Paulo, Brasília e Estados Unidos. Em 2025, crescimento de +22%.</p>
       </div>
       <div class="numbers">
-        <div class="num-cell"><div class="num-value">30.000+</div><div class="num-label">usuários atendidos</div></div>
-        <div class="num-cell"><div class="num-value">150+</div><div class="num-label">clientes</div></div>
-        <div class="num-cell"><div class="num-value">4</div><div class="num-label">países</div></div>
-        <div class="num-cell"><div class="num-value">16+</div><div class="num-label">indústrias atendidas</div></div>
-        <div class="num-cell"><div class="num-value">5</div><div class="num-label">parcerias estratégicas</div></div>
-        <div class="num-cell"><div class="num-value">8</div><div class="num-label">prêmios</div></div>
+        <div class="num-cell"><div class="num-value" data-i18n="num.1v">30.000+</div><div class="num-label" data-i18n="num.1">usuários atendidos</div></div>
+        <div class="num-cell"><div class="num-value" data-i18n="num.2v">150+</div><div class="num-label" data-i18n="num.2">clientes</div></div>
+        <div class="num-cell"><div class="num-value" data-i18n="num.3v">4</div><div class="num-label" data-i18n="num.3">países</div></div>
+        <div class="num-cell"><div class="num-value" data-i18n="num.4v">16+</div><div class="num-label" data-i18n="num.4">indústrias atendidas</div></div>
+        <div class="num-cell"><div class="num-value" data-i18n="num.5v">5</div><div class="num-label" data-i18n="num.5">parcerias estratégicas</div></div>
+        <div class="num-cell"><div class="num-value" data-i18n="num.6v">8</div><div class="num-label" data-i18n="num.6">prêmios</div></div>
       </div>
     </div>
 
     <div class="partners-wrap">
-      <div class="partners-title">PARCERIAS ESTRATÉGICAS · LÍDERES EM SEUS SEGMENTOS (GARTNER &amp; FORRESTER)</div>
+      <div class="partners-title" data-i18n="emp.parcerias">PARCERIAS ESTRATÉGICAS · LÍDERES EM SEUS SEGMENTOS (GARTNER &amp; FORRESTER)</div>
       <div class="partners">
         <div class="partner">SAP</div>
         <div class="partner">Qlik</div>
@@ -379,67 +391,68 @@
   <section id="mercado" class="sec-mercado" data-screen-label="Mercado">
     <div class="mercado">
       <div>
-        <div class="eyebrow" style="margin-bottom: 18px">02 · POSIÇÃO NO MERCADO</div>
-        <h2>Reconhecimento<br>do mercado.<br>Escala regional.</h2>
-        <p class="mercado-lead">Mais de 30.000 usuários atendidos, 150+ clientes e 16 indústrias — sustentados por parcerias com os fabricantes líderes de cada segmento e por uma prática técnica construída desde 1998.</p>
+        <div class="eyebrow" style="margin-bottom: 18px" data-i18n="mer.olho">02 · POSIÇÃO NO MERCADO</div>
+        <h2 data-i18n-html="mer.titulo">Reconhecimento<br>do mercado.<br>Escala regional.</h2>
+        <p class="mercado-lead" data-i18n="mer.lead">Mais de 30.000 usuários atendidos, 150+ clientes e 16 indústrias — sustentados por parcerias com os fabricantes líderes de cada segmento e por uma prática técnica construída desde 1998.</p>
       </div>
       <div class="press">
         <div class="press-card">
           <div class="press-source">VALOR ECONÔMICO</div>
-          <p class="press-headline">Software SAP vendido sob a marca da SQLTECH.</p>
+          <p class="press-headline" data-i18n="mer.n1">Software SAP vendido sob a marca da SQLTECH.</p>
         </div>
         <div class="press-card">
           <div class="press-source">G1</div>
-          <p class="press-headline">Programa de Trainee da SQLTECH.</p>
+          <p class="press-headline" data-i18n="mer.n2">Programa de Trainee da SQLTECH.</p>
         </div>
         <div class="press-card">
           <div class="press-source">COMPUTERWORLD</div>
-          <p class="press-headline">Parceria para Business Analytics da SAP em nuvem.</p>
+          <p class="press-headline" data-i18n="mer.n3">Parceria para Business Analytics da SAP em nuvem.</p>
         </div>
       </div>
     </div>
 
     <div class="clientes">
       <div class="clientes-head">
-        <div class="clientes-eyebrow">QUEM CONFIA NA SQLTECH</div>
-        <h2 class="clientes-title">Grandes marcas, decisões guiadas por dados</h2>
-        <p class="clientes-sub">De bancos e seguradoras à indústria, varejo, saúde e governo — projetos entregues em 16 setores diferentes.</p>
+        <div class="clientes-eyebrow" data-i18n="cli.olho">QUEM CONFIA NA SQLTECH</div>
+        <h2 class="clientes-title" data-i18n="cli.titulo">Grandes marcas, decisões guiadas por dados</h2>
+        <p class="clientes-sub" data-i18n="cli.sub">De bancos e seguradoras à indústria, varejo, saúde e governo — projetos entregues em 16 setores diferentes.</p>
         <div class="clientes-rule"></div>
       </div>
       <img class="logo-wall" src="assets/clientes.png" width="1098" height="753" loading="lazy" decoding="async"
+           data-i18n-alt="cli.alt"
            alt="Marcas atendidas pela SQLTECH — entre elas Itaú, Bradesco, Citibank, AmBev, Natura, Volkswagen, Nestlé, Johnson &amp; Johnson, Toshiba, Sodexo, Seara, SKY e Prefeitura de São Paulo.">
       <div class="clientes-stats">
-        <div class="cstat"><div class="cstat-value">150+</div><div class="cstat-label">CLIENTES ATIVOS</div></div>
-        <div class="cstat"><div class="cstat-value">30.000+</div><div class="cstat-label">USUÁRIOS ATENDIDOS</div></div>
-        <div class="cstat"><div class="cstat-value">16</div><div class="cstat-label">INDÚSTRIAS</div></div>
-        <div class="cstat"><div class="cstat-value">28</div><div class="cstat-label">ANOS DE MERCADO</div></div>
+        <div class="cstat"><div class="cstat-value" data-i18n="cst.1v">150+</div><div class="cstat-label" data-i18n="cst.1">CLIENTES ATIVOS</div></div>
+        <div class="cstat"><div class="cstat-value" data-i18n="cst.2v">30.000+</div><div class="cstat-label" data-i18n="cst.2">USUÁRIOS ATENDIDOS</div></div>
+        <div class="cstat"><div class="cstat-value" data-i18n="cst.3v">16</div><div class="cstat-label" data-i18n="cst.3">INDÚSTRIAS</div></div>
+        <div class="cstat"><div class="cstat-value" data-i18n="cst.4v">28</div><div class="cstat-label" data-i18n="cst.4">ANOS DE MERCADO</div></div>
       </div>
     </div>
 
     <div class="comp">
-      <div id="competencias" class="eyebrow" style="margin-bottom: 8px">03 · COMPETÊNCIAS TECNOLÓGICAS</div>
-      <h3>De 1998 à era da IA</h3>
-      <p class="comp-lead">Uma stack que evolui há quase três décadas — sempre na fronteira de dados e analytics.</p>
+      <div id="competencias" class="eyebrow" style="margin-bottom: 8px" data-i18n="cmp.olho">03 · COMPETÊNCIAS TECNOLÓGICAS</div>
+      <h3 data-i18n="cmp.titulo">De 1998 à era da IA</h3>
+      <p class="comp-lead" data-i18n="cmp.lead">Uma stack que evolui há quase três décadas — sempre na fronteira de dados e analytics.</p>
       <div class="timeline">
         <div class="tl-cell">
           <div class="tl-dot"></div>
           <div class="tl-era">1998</div>
-          <div class="tl-tag">FUNDAÇÃO</div>
+          <div class="tl-tag" data-i18n="tl.1">FUNDAÇÃO</div>
           <div class="tl-stack">SAP IQ / Sybase
 Oracle</div>
         </div>
         <div class="tl-cell">
           <div class="tl-dot"></div>
           <div class="tl-era">BI &amp; EPM</div>
-          <div class="tl-tag">DECISÃO</div>
+          <div class="tl-tag" data-i18n="tl.2">DECISÃO</div>
           <div class="tl-stack">SAP BO / SAC
 SAP SSM
 SAP BPC</div>
         </div>
         <div class="tl-cell">
           <div class="tl-dot"></div>
-          <div class="tl-era">Integração</div>
-          <div class="tl-tag">DADOS</div>
+          <div class="tl-era" data-i18n="tl.3e">Integração</div>
+          <div class="tl-tag" data-i18n="tl.3">DADOS</div>
           <div class="tl-stack">Informatica
 PowerCenter
 Data Services</div>
@@ -454,14 +467,14 @@ Oracle Exadata</div>
         <div class="tl-cell">
           <div class="tl-dot"></div>
           <div class="tl-era">Analytics</div>
-          <div class="tl-tag">AVANÇADO</div>
+          <div class="tl-tag" data-i18n="tl.5">AVANÇADO</div>
           <div class="tl-stack">Qlik / Celonis / H2O</div>
         </div>
         <div class="tl-cell">
           <div class="tl-dot tl-dot--on"></div>
           <div class="tl-era">2025</div>
-          <div class="tl-tag">ERA DA IA</div>
-          <div class="tl-stack">Engenharia de dados moderna
+          <div class="tl-tag" data-i18n="tl.6">ERA DA IA</div>
+          <div class="tl-stack" data-i18n="tl.6s">Engenharia de dados moderna
 LLMs / IA Generativa
 Agentes de IA · RAG</div>
         </div>
@@ -472,60 +485,60 @@ Agentes de IA · RAG</div>
   <!-- SERVIÇOS -->
   <section id="servicos" class="sec-servicos" data-screen-label="Serviços">
     <div class="wrap-1100">
-      <div class="eyebrow" style="margin-bottom: 8px">04 · NOSSOS SERVIÇOS</div>
-      <h2 class="sec-h2">Dados, BI e processos</h2>
+      <div class="eyebrow" style="margin-bottom: 8px" data-i18n="srv.olho">04 · NOSSOS SERVIÇOS</div>
+      <h2 class="sec-h2" data-i18n="srv.titulo">Dados, BI e processos</h2>
       <div class="offer">
         <div class="offer-card">
           <div class="offer-title">Database Services</div>
           <div class="offer-rule"></div>
           <div class="offer-items">
-            <div class="offer-item">— Migração de servidores</div>
-            <div class="offer-item">— Instalação, configuração e suporte</div>
-            <div class="offer-item">— Integração de sistemas heterogêneos</div>
-            <div class="offer-item">— Performance &amp; tuning</div>
-            <div class="offer-item">— Movimentação dinâmica de dados</div>
-            <div class="offer-item">— Alto volume de dados (TB)</div>
+            <div class="offer-item" data-i18n="srv.a1">— Migração de servidores</div>
+            <div class="offer-item" data-i18n="srv.a2">— Instalação, configuração e suporte</div>
+            <div class="offer-item" data-i18n="srv.a3">— Integração de sistemas heterogêneos</div>
+            <div class="offer-item" data-i18n="srv.a4">— Performance &amp; tuning</div>
+            <div class="offer-item" data-i18n="srv.a5">— Movimentação dinâmica de dados</div>
+            <div class="offer-item" data-i18n="srv.a6">— Alto volume de dados (TB)</div>
           </div>
         </div>
         <div class="offer-card">
           <div class="offer-title">Analytics / BI</div>
           <div class="offer-rule"></div>
           <div class="offer-items">
-            <div class="offer-item">— Consultoria de BI end-to-end</div>
-            <div class="offer-item">— Definição do modelo de negócio</div>
-            <div class="offer-item">— Modelagem relacional e multidimensional</div>
-            <div class="offer-item">— Seleção de tecnologia</div>
-            <div class="offer-item">— Implementação</div>
-            <div class="offer-item">— Gestão do projeto</div>
+            <div class="offer-item" data-i18n="srv.b1">— Consultoria de BI end-to-end</div>
+            <div class="offer-item" data-i18n="srv.b2">— Definição do modelo de negócio</div>
+            <div class="offer-item" data-i18n="srv.b3">— Modelagem relacional e multidimensional</div>
+            <div class="offer-item" data-i18n="srv.b4">— Seleção de tecnologia</div>
+            <div class="offer-item" data-i18n="srv.b5">— Implementação</div>
+            <div class="offer-item" data-i18n="srv.b6">— Gestão do projeto</div>
           </div>
         </div>
         <div class="offer-card">
           <div class="offer-title">Process Mining</div>
           <div class="offer-rule"></div>
           <div class="offer-items">
-            <div class="offer-item">— Insights a partir de logs de eventos reais</div>
-            <div class="offer-item">— Auditar, analisar e melhorar processos</div>
-            <div class="offer-item">— Visão de conformidade e desempenho</div>
-            <div class="offer-item">— Identificação de gargalos e retrabalho</div>
-            <div class="offer-item">— Base factual para automação</div>
+            <div class="offer-item" data-i18n="srv.c1">— Insights a partir de logs de eventos reais</div>
+            <div class="offer-item" data-i18n="srv.c2">— Auditar, analisar e melhorar processos</div>
+            <div class="offer-item" data-i18n="srv.c3">— Visão de conformidade e desempenho</div>
+            <div class="offer-item" data-i18n="srv.c4">— Identificação de gargalos e retrabalho</div>
+            <div class="offer-item" data-i18n="srv.c5">— Base factual para automação</div>
           </div>
         </div>
       </div>
       <div class="duo">
         <div class="box-light">
           <div class="box-title">Big Data</div>
-          <p>Análise e interpretação de grandes volumes e variedade de dados — inclusive não estruturados e em alta velocidade.</p>
+          <p data-i18n="srv.bd">Análise e interpretação de grandes volumes e variedade de dados — inclusive não estruturados e em alta velocidade.</p>
           <div class="tags">
-            <div class="tag">Estratégia</div>
-            <div class="tag">Produtividade</div>
-            <div class="tag">Redução de custo</div>
-            <div class="tag">Decisão inteligente</div>
+            <div class="tag" data-i18n="srv.bd1">Estratégia</div>
+            <div class="tag" data-i18n="srv.bd2">Produtividade</div>
+            <div class="tag" data-i18n="srv.bd3">Redução de custo</div>
+            <div class="tag" data-i18n="srv.bd4">Decisão inteligente</div>
           </div>
         </div>
         <div class="box-dark">
-          <div class="box-title">Inteligência Artificial aplicada</div>
-          <p>Do caso de uso à produção — com governança, segurança e integração aos sistemas que você já usa.</p>
-          <a class="ia-link" href="#ia">VER SOLUÇÕES DE IA →</a>
+          <div class="box-title" data-i18n="srv.iat">Inteligência Artificial aplicada</div>
+          <p data-i18n="srv.iap">Do caso de uso à produção — com governança, segurança e integração aos sistemas que você já usa.</p>
+          <a class="ia-link" href="#ia" data-i18n="srv.ial">VER SOLUÇÕES DE IA →</a>
         </div>
       </div>
     </div>
@@ -536,70 +549,70 @@ Agentes de IA · RAG</div>
     <div class="orb orb--ia"></div>
     <div class="ia-inner">
       <div>
-        <div class="ia-eyebrow">05 · IA APLICADA</div>
-        <h2>28 anos<br>transformando<br>dados em decisão.</h2>
-        <p class="ia-lead">Implementamos IA de ponta a ponta — do caso de uso à produção — com governança, segurança e integração aos sistemas que a empresa já usa.</p>
+        <div class="ia-eyebrow" data-i18n="ia.olho">05 · IA APLICADA</div>
+        <h2 data-i18n-html="ia.titulo">28 anos<br>transformando<br>dados em decisão.</h2>
+        <p class="ia-lead" data-i18n="ia.lead">Implementamos IA de ponta a ponta — do caso de uso à produção — com governança, segurança e integração aos sistemas que a empresa já usa.</p>
       </div>
       <div class="ai-grid">
         <div class="ai-card ai-card--lit">
-          <div class="ai-title">IA NO ATENDIMENTO</div>
+          <div class="ai-title" data-i18n="ia.a">IA NO ATENDIMENTO</div>
           <div class="ai-items">
-            <div class="ai-item">— Agentes por chat e voz (WhatsApp, site, telefone) 24/7</div>
-            <div class="ai-item">— Triagem, qualificação e roteamento automático</div>
-            <div class="ai-item">— Secretária virtual: agendamento e lembretes</div>
-            <div class="ai-item">— Conectado a CRM, ERP e bases internas via RAG</div>
-            <div class="ai-item">— Escalonamento inteligente para o humano</div>
-            <div class="ai-item">— Resumo e análise de sentimento das conversas</div>
+            <div class="ai-item" data-i18n="ia.a1">— Agentes por chat e voz (WhatsApp, site, telefone) 24/7</div>
+            <div class="ai-item" data-i18n="ia.a2">— Triagem, qualificação e roteamento automático</div>
+            <div class="ai-item" data-i18n="ia.a3">— Secretária virtual: agendamento e lembretes</div>
+            <div class="ai-item" data-i18n="ia.a4">— Conectado a CRM, ERP e bases internas via RAG</div>
+            <div class="ai-item" data-i18n="ia.a5">— Escalonamento inteligente para o humano</div>
+            <div class="ai-item" data-i18n="ia.a6">— Resumo e análise de sentimento das conversas</div>
           </div>
         </div>
         <div class="ai-card">
-          <div class="ai-title">ANÁLISE DE DOCUMENTOS</div>
+          <div class="ai-title" data-i18n="ia.b">ANÁLISE DE DOCUMENTOS</div>
           <div class="ai-items">
-            <div class="ai-item">— Extração de NF-e, contratos, propostas e faturas</div>
-            <div class="ai-item">— OCR + LLM para documentos digitalizados</div>
-            <div class="ai-item">— Classificação, validação e conferência automática</div>
-            <div class="ai-item">— Conferência fiscal e apoio a compliance (SPED)</div>
-            <div class="ai-item">— Extração de cláusulas e riscos em contratos</div>
-            <div class="ai-item">— Busca semântica em grandes acervos</div>
+            <div class="ai-item" data-i18n="ia.b1">— Extração de NF-e, contratos, propostas e faturas</div>
+            <div class="ai-item" data-i18n="ia.b2">— OCR + LLM para documentos digitalizados</div>
+            <div class="ai-item" data-i18n="ia.b3">— Classificação, validação e conferência automática</div>
+            <div class="ai-item" data-i18n="ia.b4">— Conferência fiscal e apoio a compliance (SPED)</div>
+            <div class="ai-item" data-i18n="ia.b5">— Extração de cláusulas e riscos em contratos</div>
+            <div class="ai-item" data-i18n="ia.b6">— Busca semântica em grandes acervos</div>
           </div>
         </div>
         <div class="ai-card">
-          <div class="ai-title">IA ANALÍTICA</div>
+          <div class="ai-title" data-i18n="ia.c">IA ANALÍTICA</div>
           <div class="ai-items">
-            <div class="ai-item">— Analytics aumentado com insights em linguagem natural</div>
-            <div class="ai-item">— "Pergunte aos seus dados" — BI conversacional (text-to-SQL)</div>
-            <div class="ai-item">— Modelos preditivos: demanda, churn, inadimplência, receita</div>
-            <div class="ai-item">— Detecção de anomalias e desvios</div>
-            <div class="ai-item">— AutoML para acelerar criação e deploy</div>
-            <div class="ai-item">— IA sobre process mining</div>
+            <div class="ai-item" data-i18n="ia.c1">— Analytics aumentado com insights em linguagem natural</div>
+            <div class="ai-item" data-i18n="ia.c2">— "Pergunte aos seus dados" — BI conversacional (text-to-SQL)</div>
+            <div class="ai-item" data-i18n="ia.c3">— Modelos preditivos: demanda, churn, inadimplência, receita</div>
+            <div class="ai-item" data-i18n="ia.c4">— Detecção de anomalias e desvios</div>
+            <div class="ai-item" data-i18n="ia.c5">— AutoML para acelerar criação e deploy</div>
+            <div class="ai-item" data-i18n="ia.c6">— IA sobre process mining</div>
           </div>
         </div>
         <div class="ai-card">
-          <div class="ai-title">ANÁLISE DE PROCESSOS</div>
+          <div class="ai-title" data-i18n="ia.d">ANÁLISE DE PROCESSOS</div>
           <div class="ai-items">
-            <div class="ai-item">— Descoberta automática do fluxo real (ERP, CRM, SAP)</div>
-            <div class="ai-item">— Identificação de gargalos e retrabalho</div>
-            <div class="ai-item">— Análise de causa raiz explicada em linguagem natural</div>
-            <div class="ai-item">— Verificação de conformidade (compliance)</div>
-            <div class="ai-item">— Recomendações de automação priorizadas por impacto</div>
+            <div class="ai-item" data-i18n="ia.d1">— Descoberta automática do fluxo real (ERP, CRM, SAP)</div>
+            <div class="ai-item" data-i18n="ia.d2">— Identificação de gargalos e retrabalho</div>
+            <div class="ai-item" data-i18n="ia.d3">— Análise de causa raiz explicada em linguagem natural</div>
+            <div class="ai-item" data-i18n="ia.d4">— Verificação de conformidade (compliance)</div>
+            <div class="ai-item" data-i18n="ia.d5">— Recomendações de automação priorizadas por impacto</div>
           </div>
         </div>
         <div class="ai-card">
-          <div class="ai-title">AUTOMAÇÃO E COPILOTOS</div>
+          <div class="ai-title" data-i18n="ia.e">AUTOMAÇÃO E COPILOTOS</div>
           <div class="ai-items">
-            <div class="ai-item">— Orquestração de tarefas e processos com agentes</div>
-            <div class="ai-item">— Copilotos por área: jurídico, financeiro, comercial, operações</div>
-            <div class="ai-item">— Transcrição e diarização de calls e reuniões</div>
-            <div class="ai-item">— Relatórios automáticos a partir dos próprios dados</div>
+            <div class="ai-item" data-i18n="ia.e1">— Orquestração de tarefas e processos com agentes</div>
+            <div class="ai-item" data-i18n="ia.e2">— Copilotos por área: jurídico, financeiro, comercial, operações</div>
+            <div class="ai-item" data-i18n="ia.e3">— Transcrição e diarização de calls e reuniões</div>
+            <div class="ai-item" data-i18n="ia.e4">— Relatórios automáticos a partir dos próprios dados</div>
           </div>
         </div>
         <div class="ai-card">
-          <div class="ai-title">LLMs EM PRODUÇÃO</div>
+          <div class="ai-title" data-i18n="ia.f">LLMs EM PRODUÇÃO</div>
           <div class="ai-items">
-            <div class="ai-item">— Base de conhecimento (RAG) sobre manuais e políticas</div>
-            <div class="ai-item">— Integração via API dentro do que o cliente já usa</div>
-            <div class="ai-item">— Governança, segurança e LGPD</div>
-            <div class="ai-item">— Monitoramento e evolução contínua</div>
+            <div class="ai-item" data-i18n="ia.f1">— Base de conhecimento (RAG) sobre manuais e políticas</div>
+            <div class="ai-item" data-i18n="ia.f2">— Integração via API dentro do que o cliente já usa</div>
+            <div class="ai-item" data-i18n="ia.f3">— Governança, segurança e LGPD</div>
+            <div class="ai-item" data-i18n="ia.f4">— Monitoramento e evolução contínua</div>
           </div>
         </div>
       </div>
@@ -609,38 +622,38 @@ Agentes de IA · RAG</div>
   <!-- MÉTODO -->
   <section class="sec-metodo" data-screen-label="Como implementamos">
     <div class="wrap-1100 metodo">
-      <h2>Como implementamos IA</h2>
-      <p class="metodo-lead">Do caso de uso à produção — com integração segura e governança em cada etapa.</p>
+      <h2 data-i18n="met.titulo">Como implementamos IA</h2>
+      <p class="metodo-lead" data-i18n="met.lead">Do caso de uso à produção — com integração segura e governança em cada etapa.</p>
       <div class="steps">
         <div class="step">
           <div class="step-dot"></div>
           <div class="step-n">01</div>
-          <div class="step-title">Descoberta &amp; ROI</div>
-          <div class="step-body">Mapeamento do caso de uso e do retorno esperado.</div>
+          <div class="step-title" data-i18n="met.1">Descoberta &amp; ROI</div>
+          <div class="step-body" data-i18n="met.1d">Mapeamento do caso de uso e do retorno esperado.</div>
         </div>
         <div class="step">
           <div class="step-dot"></div>
           <div class="step-n">02</div>
-          <div class="step-title">Prova de conceito</div>
-          <div class="step-body">Validação rápida com dados reais antes de escalar.</div>
+          <div class="step-title" data-i18n="met.2">Prova de conceito</div>
+          <div class="step-body" data-i18n="met.2d">Validação rápida com dados reais antes de escalar.</div>
         </div>
         <div class="step">
           <div class="step-dot"></div>
           <div class="step-n">03</div>
-          <div class="step-title">Integração segura</div>
-          <div class="step-body">Conexão aos dados e sistemas que a empresa já usa.</div>
+          <div class="step-title" data-i18n="met.3">Integração segura</div>
+          <div class="step-body" data-i18n="met.3d">Conexão aos dados e sistemas que a empresa já usa.</div>
         </div>
         <div class="step">
           <div class="step-dot"></div>
           <div class="step-n">04</div>
-          <div class="step-title">Governança &amp; LGPD</div>
-          <div class="step-body">Privacidade, controle de qualidade e segurança.</div>
+          <div class="step-title" data-i18n="met.4">Governança &amp; LGPD</div>
+          <div class="step-body" data-i18n="met.4d">Privacidade, controle de qualidade e segurança.</div>
         </div>
         <div class="step">
           <div class="step-dot"></div>
           <div class="step-n">05</div>
-          <div class="step-title">Produção &amp; evolução</div>
-          <div class="step-body">Monitoramento e melhoria contínua em operação.</div>
+          <div class="step-title" data-i18n="met.5">Produção &amp; evolução</div>
+          <div class="step-body" data-i18n="met.5d">Monitoramento e melhoria contínua em operação.</div>
         </div>
       </div>
     </div>
@@ -649,52 +662,52 @@ Agentes de IA · RAG</div>
   <!-- CONTATO -->
   <section id="contato" class="sec-contato" data-screen-label="Contato">
     <div class="contato-inner">
-      <div class="ia-eyebrow">06 · FALE CONOSCO</div>
+      <div class="ia-eyebrow" data-i18n="ct.olho">06 · FALE CONOSCO</div>
       <div class="contato-grid">
 
         <div class="contato-form-col">
-          <h2 class="contato-col-title">Contato</h2>
+          <h2 class="contato-col-title" data-i18n="ct.titulo">Contato</h2>
           <form id="form-contato" novalidate>
             <div class="form-row">
               <div class="campo">
-                <label class="sr-only" for="c-nome">Nome</label>
-                <input id="c-nome" name="nome" type="text" placeholder="Nome *" required>
+                <label class="sr-only" for="c-nome" data-i18n="ct.nome">Nome</label>
+                <input id="c-nome" name="nome" type="text" placeholder="Nome *" data-i18n-ph="ct.nomePh" required>
               </div>
               <div class="campo">
-                <label class="sr-only" for="c-email">E-mail</label>
-                <input id="c-email" name="email" type="email" placeholder="Email *" required>
+                <label class="sr-only" for="c-email" data-i18n="ct.email">E-mail</label>
+                <input id="c-email" name="email" type="email" placeholder="Email *" data-i18n-ph="ct.emailPh" required>
               </div>
             </div>
             <div class="form-row" style="grid-template-columns: 1fr">
               <div class="campo">
-                <label class="sr-only" for="c-assunto">Assunto</label>
-                <input id="c-assunto" name="assunto" type="text" placeholder="Assunto">
+                <label class="sr-only" for="c-assunto" data-i18n="ct.assunto">Assunto</label>
+                <input id="c-assunto" name="assunto" type="text" placeholder="Assunto" data-i18n-ph="ct.assunto">
               </div>
             </div>
             <div class="campo">
-              <label class="sr-only" for="c-mensagem">Mensagem</label>
-              <textarea id="c-mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
+              <label class="sr-only" for="c-mensagem" data-i18n="ct.msg">Mensagem</label>
+              <textarea id="c-mensagem" name="mensagem" placeholder="Mensagem" data-i18n-ph="ct.msg" required></textarea>
             </div>
-            <button class="btn-enviar" type="submit">ENVIAR MENSAGEM</button>
+            <button class="btn-enviar" type="submit" data-i18n="ct.enviar">ENVIAR MENSAGEM</button>
           </form>
         </div>
 
         <div>
-          <h2 class="contato-col-title">Endereço</h2>
+          <h2 class="contato-col-title" data-i18n="ct.endereco">Endereço</h2>
           <p class="contato-linha">
             Rua Padre Estevão Pernet, 718<br>
             cj 1512<br>
             Tatuapé<br>
-            São Paulo - SP<br>
+            <span data-i18n="ct.cidade">São Paulo - SP</span><br>
             <a class="contato-link" href="mailto:contato@sqltech.com.br">contato@sqltech.com.br</a>
           </p>
         </div>
 
         <div>
-          <h2 class="contato-col-title">Telefone</h2>
+          <h2 class="contato-col-title" data-i18n="ct.telefone">Telefone</h2>
           <p class="contato-linha">
-            Tel: <a class="contato-link" href="tel:+551134377070">55-11-3437-7070</a><br>
-            Fax: 55-11-3437-7075
+            <span data-i18n="ct.tel">Tel:</span> <a class="contato-link" href="tel:+551134377070">55-11-3437-7070</a><br>
+            <span data-i18n="ct.fax">Fax:</span> 55-11-3437-7075
           </p>
         </div>
 
@@ -707,46 +720,47 @@ Agentes de IA · RAG</div>
     <div class="foot-grid">
       <div>
         <img class="foot-logo" src="assets/logo-branco.png" width="1473" height="351" alt="SQLTECH">
-        <p class="foot-desc">Vamos transformar os dados da sua empresa em decisão — com BI, engenharia de dados e IA aplicada.</p>
+        <p class="foot-desc" data-i18n="rod.desc">Vamos transformar os dados da sua empresa em decisão — com BI, engenharia de dados e IA aplicada.</p>
         <div class="foot-links">
           <a class="foot-link" href="#">www.sqltech.com.br</a>
           <a class="foot-link" href="#">linkedin.com/company/sqltech</a>
         </div>
       </div>
       <div>
-        <div class="foot-col-title">Serviços</div>
+        <div class="foot-col-title" data-i18n="rod.c1">Serviços</div>
         <div class="foot-nav">
           <a class="foot-nav-link" href="#servicos">› Database Services</a>
           <a class="foot-nav-link" href="#servicos">› Analytics / BI</a>
           <a class="foot-nav-link" href="#servicos">› Process Mining</a>
           <a class="foot-nav-link" href="#servicos">› Big Data</a>
-          <a class="foot-nav-link" href="#competencias">› Engenharia de Dados</a>
-          <a class="foot-nav-link" href="#ia">› IA Aplicada</a>
+          <a class="foot-nav-link" href="#competencias" data-i18n="rod.c1e">› Engenharia de Dados</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c1f">› IA Aplicada</a>
         </div>
       </div>
       <div>
-        <div class="foot-col-title">IA Aplicada</div>
+        <div class="foot-col-title" data-i18n="rod.c2">IA Aplicada</div>
         <div class="foot-nav">
-          <a class="foot-nav-link" href="#ia">› IA no atendimento</a>
-          <a class="foot-nav-link" href="#ia">› Análise de documentos</a>
-          <a class="foot-nav-link" href="#ia">› IA analítica</a>
-          <a class="foot-nav-link" href="#ia">› Análise de processos</a>
-          <a class="foot-nav-link" href="#ia">› Copilotos por área</a>
-          <a class="foot-nav-link" href="#ia">› LLMs em produção</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c2a">› IA no atendimento</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c2b">› Análise de documentos</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c2c">› IA analítica</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c2d">› Análise de processos</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c2e">› Copilotos por área</a>
+          <a class="foot-nav-link" href="#ia" data-i18n="rod.c2f">› LLMs em produção</a>
         </div>
       </div>
       <div class="news">
         <div class="foot-col-title">Newsletter</div>
-        <p>Receba conteúdos sobre dados, BI e IA aplicada ao negócio.</p>
+        <p data-i18n="rod.news">Receba conteúdos sobre dados, BI e IA aplicada ao negócio.</p>
         <div class="news-form">
-          <input class="news-input" type="email" placeholder="Seu e-mail corporativo" aria-label="Seu e-mail corporativo">
-          <button class="news-btn" type="button" aria-label="Inscrever">→</button>
+          <input class="news-input" type="email" placeholder="Seu e-mail corporativo"
+                 data-i18n-ph="rod.newsPh" data-i18n-al="rod.newsPh" aria-label="Seu e-mail corporativo">
+          <button class="news-btn" type="button" data-i18n-al="rod.inscrever" aria-label="Inscrever">→</button>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <div>© 2026 SQLTECH · DESDE 1998</div>
-      <div>SÃO PAULO · BRASÍLIA · EUA</div>
+      <div data-i18n="rod.copy">© 2026 SQLTECH · DESDE 1998</div>
+      <div data-i18n="rod.cidades">SÃO PAULO · BRASÍLIA · EUA</div>
     </div>
   </footer>
 
@@ -755,6 +769,392 @@ Agentes de IA · RAG</div>
 <script>
 (function () {
   "use strict";
+
+  /* ============================ IDIOMAS ============================
+     O portugues NAO fica neste dicionario: ele e lido do proprio HTML no
+     carregamento. Assim o texto em portugues existe uma unica vez, na
+     marcacao, e nunca sai de sincronia com as traducoes.
+     Para mexer no texto em portugues, edite o HTML. Para as traducoes,
+     edite abaixo. Chave sem traducao cai de volta no portugues.        */
+
+  var LOCALE = { pt: "pt-BR", en: "en-US", es: "es-ES" };
+
+  var TRAD = {
+    en: {
+      "meta.titulo": "SQLTECH — Turning data into decisions for 28 years",
+      "meta.desc": "SQLTECH: Business Intelligence, Data Engineering and Artificial Intelligence applied to business. Since 1998.",
+      "idioma.grupo": "Language",
+      "topo.local": "São Paulo · Brasília · USA",
+      "topo.contato": "CONTACT US",
+      "nav.1": "HOME", "nav.1s": "Home",
+      "nav.2": "THE COMPANY", "nav.2s": "About SQLTECH",
+      "nav.3": "MARKET", "nav.3s": "Position and clients",
+      "nav.4": "CAPABILITIES", "nav.4s": "Technology stack",
+      "nav.5": "SERVICES", "nav.5s": "What we do",
+      "nav.6": "APPLIED AI", "nav.6s": "Featured",
+      "nav.7": "CONTACT", "nav.7s": "Get in touch",
+      "hero.olho": "FOR 28 YEARS",
+      "hero.titulo": "TURNING DATA INTO DECISIONS",
+      "hero.lead": "Business Intelligence, Data Engineering and Artificial Intelligence applied to your business.",
+      "hero.cta": "SCHEDULE A CONVERSATION",
+      "fx.1s": "Infrastructure and performance",
+      "fx.2s": "End-to-end consulting",
+      "fx.3s": "Real processes",
+      "fx.4s": "High volume and variety",
+      "fx.5": "APPLIED AI", "fx.5s": "From use case to production",
+      "emp.titulo": "Why SQLTECH?",
+      "emp.p1": "28 years in the market",
+      "emp.p2": "Partnerships with market leaders",
+      "emp.p3": "AI applied to business",
+      "emp.olho": "01 · ABOUT SQLTECH",
+      "emp.t1": "For nearly three decades dedicated to developing and implementing Business Intelligence, Analytics and Data solutions for large organizations.",
+      "emp.t2": "Founded in 1998, SQLTECH today serves four countries — Brazil, Argentina, Chile and Mexico — from three offices: São Paulo, Brasília and the United States. In 2025, growth of +22%.",
+      "num.1v": "30,000+", "num.1": "users served",
+      "num.2v": "150+", "num.2": "clients",
+      "num.3v": "4", "num.3": "countries",
+      "num.4v": "16+", "num.4": "industries served",
+      "num.5v": "5", "num.5": "strategic partnerships",
+      "num.6v": "8", "num.6": "awards",
+      "emp.parcerias": "STRATEGIC PARTNERSHIPS · LEADERS IN THEIR SEGMENTS (GARTNER & FORRESTER)",
+      "mer.olho": "02 · MARKET POSITION",
+      "mer.titulo": "Market<br>recognition.<br>Regional scale.",
+      "mer.lead": "More than 30,000 users served, 150+ clients and 16 industries — backed by partnerships with the leading vendor in each segment and by technical practice built since 1998.",
+      "mer.n1": "SAP software sold under the SQLTECH brand.",
+      "mer.n2": "SQLTECH Trainee Program.",
+      "mer.n3": "Partnership for SAP Business Analytics in the cloud.",
+      "cli.olho": "WHO TRUSTS SQLTECH",
+      "cli.titulo": "Major brands, data-driven decisions",
+      "cli.sub": "From banks and insurers to industry, retail, healthcare and government — projects delivered across 16 different sectors.",
+      "cli.alt": "Brands served by SQLTECH — including Itaú, Bradesco, Citibank, AmBev, Natura, Volkswagen, Nestlé, Johnson & Johnson, Toshiba, Sodexo, Seara, SKY and the City of São Paulo.",
+      "cst.1v": "150+", "cst.1": "ACTIVE CLIENTS",
+      "cst.2v": "30,000+", "cst.2": "USERS SERVED",
+      "cst.3v": "16", "cst.3": "INDUSTRIES",
+      "cst.4v": "28", "cst.4": "YEARS IN THE MARKET",
+      "cmp.olho": "03 · TECHNOLOGY CAPABILITIES",
+      "cmp.titulo": "From 1998 to the AI era",
+      "cmp.lead": "A stack that has evolved for nearly three decades — always at the frontier of data and analytics.",
+      "tl.1": "FOUNDING", "tl.2": "DECISION", "tl.3e": "Integration", "tl.3": "DATA",
+      "tl.5": "ADVANCED", "tl.6": "AI ERA",
+      "tl.6s": "Modern data engineering\nLLMs / Generative AI\nAI agents · RAG",
+      "srv.olho": "04 · OUR SERVICES",
+      "srv.titulo": "Data, BI and processes",
+      "srv.a1": "— Server migration",
+      "srv.a2": "— Installation, configuration and support",
+      "srv.a3": "— Integration of heterogeneous systems",
+      "srv.a4": "— Performance & tuning",
+      "srv.a5": "— Dynamic data movement",
+      "srv.a6": "— High data volume (TB)",
+      "srv.b1": "— End-to-end BI consulting",
+      "srv.b2": "— Business model definition",
+      "srv.b3": "— Relational and multidimensional modeling",
+      "srv.b4": "— Technology selection",
+      "srv.b5": "— Implementation",
+      "srv.b6": "— Project management",
+      "srv.c1": "— Insights from real event logs",
+      "srv.c2": "— Audit, analyze and improve processes",
+      "srv.c3": "— Compliance and performance view",
+      "srv.c4": "— Identification of bottlenecks and rework",
+      "srv.c5": "— Factual basis for automation",
+      "srv.bd": "Analysis and interpretation of large volumes and varieties of data — including unstructured and high-velocity data.",
+      "srv.bd1": "Strategy", "srv.bd2": "Productivity",
+      "srv.bd3": "Cost reduction", "srv.bd4": "Smart decisions",
+      "srv.iat": "Applied Artificial Intelligence",
+      "srv.iap": "From use case to production — with governance, security and integration into the systems you already use.",
+      "srv.ial": "SEE AI SOLUTIONS →",
+      "ia.olho": "05 · APPLIED AI",
+      "ia.titulo": "28 years<br>turning data<br>into decisions.",
+      "ia.lead": "We implement AI end to end — from use case to production — with governance, security and integration into the systems the company already uses.",
+      "ia.a": "AI IN CUSTOMER SERVICE",
+      "ia.a1": "— Chat and voice agents (WhatsApp, website, phone) 24/7",
+      "ia.a2": "— Screening, qualification and automatic routing",
+      "ia.a3": "— Virtual assistant: scheduling and reminders",
+      "ia.a4": "— Connected to CRM, ERP and internal databases via RAG",
+      "ia.a5": "— Smart escalation to a human",
+      "ia.a6": "— Conversation summaries and sentiment analysis",
+      "ia.b": "DOCUMENT ANALYSIS",
+      "ia.b1": "— Extraction from e-invoices, contracts, proposals and bills",
+      "ia.b2": "— OCR + LLM for scanned documents",
+      "ia.b3": "— Automatic classification, validation and checking",
+      "ia.b4": "— Tax checking and compliance support",
+      "ia.b5": "— Extraction of clauses and risks in contracts",
+      "ia.b6": "— Semantic search across large archives",
+      "ia.c": "ANALYTICAL AI",
+      "ia.c1": "— Augmented analytics with natural-language insights",
+      "ia.c2": "— \"Ask your data\" — conversational BI (text-to-SQL)",
+      "ia.c3": "— Predictive models: demand, churn, default, revenue",
+      "ia.c4": "— Anomaly and deviation detection",
+      "ia.c5": "— AutoML to speed up creation and deployment",
+      "ia.c6": "— AI on top of process mining",
+      "ia.d": "PROCESS ANALYSIS",
+      "ia.d1": "— Automatic discovery of the real flow (ERP, CRM, SAP)",
+      "ia.d2": "— Identification of bottlenecks and rework",
+      "ia.d3": "— Root-cause analysis explained in natural language",
+      "ia.d4": "— Compliance verification",
+      "ia.d5": "— Automation recommendations ranked by impact",
+      "ia.e": "AUTOMATION AND COPILOTS",
+      "ia.e1": "— Task and process orchestration with agents",
+      "ia.e2": "— Copilots by area: legal, finance, sales, operations",
+      "ia.e3": "— Transcription and diarization of calls and meetings",
+      "ia.e4": "— Automatic reports from your own data",
+      "ia.f": "LLMs IN PRODUCTION",
+      "ia.f1": "— Knowledge base (RAG) over manuals and policies",
+      "ia.f2": "— API integration inside what the client already uses",
+      "ia.f3": "— Governance, security and data protection (LGPD/GDPR)",
+      "ia.f4": "— Continuous monitoring and evolution",
+      "met.titulo": "How we implement AI",
+      "met.lead": "From use case to production — with secure integration and governance at every stage.",
+      "met.1": "Discovery & ROI", "met.1d": "Mapping the use case and the expected return.",
+      "met.2": "Proof of concept", "met.2d": "Fast validation with real data before scaling.",
+      "met.3": "Secure integration", "met.3d": "Connection to the data and systems the company already uses.",
+      "met.4": "Governance & data protection", "met.4d": "Privacy, quality control and security.",
+      "met.5": "Production & evolution", "met.5d": "Monitoring and continuous improvement in operation.",
+      "ct.olho": "06 · GET IN TOUCH",
+      "ct.titulo": "Contact",
+      "ct.nome": "Name", "ct.nomePh": "Name *",
+      "ct.email": "Email", "ct.emailPh": "Email *",
+      "ct.assunto": "Subject", "ct.msg": "Message",
+      "ct.enviar": "SEND MESSAGE",
+      "ct.endereco": "Address", "ct.cidade": "São Paulo - SP, Brazil",
+      "ct.telefone": "Phone", "ct.tel": "Phone:", "ct.fax": "Fax:",
+      "ct.mailAssunto": "Website enquiry", "ct.mailNome": "Name", "ct.mailEmail": "Email",
+      "rod.desc": "Let's turn your company's data into decisions — with BI, data engineering and applied AI.",
+      "rod.c1": "Services", "rod.c1e": "› Data Engineering", "rod.c1f": "› Applied AI",
+      "rod.c2": "Applied AI",
+      "rod.c2a": "› AI in customer service", "rod.c2b": "› Document analysis",
+      "rod.c2c": "› Analytical AI", "rod.c2d": "› Process analysis",
+      "rod.c2e": "› Copilots by area", "rod.c2f": "› LLMs in production",
+      "rod.news": "Get content about data, BI and AI applied to business.",
+      "rod.newsPh": "Your work email", "rod.inscrever": "Subscribe",
+      "rod.copy": "© 2026 SQLTECH · SINCE 1998",
+      "rod.cidades": "SÃO PAULO · BRASÍLIA · USA"
+    },
+
+    es: {
+      "meta.titulo": "SQLTECH — Convertimos datos en decisiones desde hace 28 años",
+      "meta.desc": "SQLTECH: Business Intelligence, Ingeniería de Datos e Inteligencia Artificial aplicada al negocio. Desde 1998.",
+      "idioma.grupo": "Idioma",
+      "topo.local": "São Paulo · Brasilia · EE. UU.",
+      "topo.contato": "CONTÁCTENOS",
+      "nav.1": "INICIO", "nav.1s": "Inicio",
+      "nav.2": "LA EMPRESA", "nav.2s": "Conozca SQLTECH",
+      "nav.3": "MERCADO", "nav.3s": "Posición y clientes",
+      "nav.4": "COMPETENCIAS", "nav.4s": "Stack tecnológico",
+      "nav.5": "SERVICIOS", "nav.5s": "Qué hacemos",
+      "nav.6": "IA APLICADA", "nav.6s": "Destacado",
+      "nav.7": "CONTACTO", "nav.7s": "Hablemos",
+      "hero.olho": "DESDE HACE 28 AÑOS",
+      "hero.titulo": "CONVERTIMOS DATOS EN DECISIONES",
+      "hero.lead": "Business Intelligence, Ingeniería de Datos e Inteligencia Artificial aplicada al negocio.",
+      "hero.cta": "AGENDE UNA CONVERSACIÓN",
+      "fx.1s": "Infraestructura y rendimiento",
+      "fx.2s": "Consultoría integral",
+      "fx.3s": "Procesos reales",
+      "fx.4s": "Alto volumen y variedad",
+      "fx.5": "IA APLICADA", "fx.5s": "Del caso de uso a producción",
+      "emp.titulo": "¿Por qué SQLTECH?",
+      "emp.p1": "28 años en el mercado",
+      "emp.p2": "Alianzas con líderes del mercado",
+      "emp.p3": "IA aplicada al negocio",
+      "emp.olho": "01 · CONOZCA SQLTECH",
+      "emp.t1": "Desde hace casi tres décadas dedicada al desarrollo y a la implementación de soluciones de Business Intelligence, Analytics y Datos para grandes organizaciones.",
+      "emp.t2": "Fundada en 1998, SQLTECH atiende hoy cuatro países — Brasil, Argentina, Chile y México — desde tres oficinas: São Paulo, Brasilia y Estados Unidos. En 2025, crecimiento del +22%.",
+      "num.1v": "30.000+", "num.1": "usuarios atendidos",
+      "num.2v": "150+", "num.2": "clientes",
+      "num.3v": "4", "num.3": "países",
+      "num.4v": "16+", "num.4": "industrias atendidas",
+      "num.5v": "5", "num.5": "alianzas estratégicas",
+      "num.6v": "8", "num.6": "premios",
+      "emp.parcerias": "ALIANZAS ESTRATÉGICAS · LÍDERES EN SUS SEGMENTOS (GARTNER Y FORRESTER)",
+      "mer.olho": "02 · POSICIÓN EN EL MERCADO",
+      "mer.titulo": "Reconocimiento<br>del mercado.<br>Escala regional.",
+      "mer.lead": "Más de 30.000 usuarios atendidos, 150+ clientes y 16 industrias — respaldados por alianzas con los fabricantes líderes de cada segmento y por una práctica técnica construida desde 1998.",
+      "mer.n1": "Software SAP vendido bajo la marca SQLTECH.",
+      "mer.n2": "Programa de Trainee de SQLTECH.",
+      "mer.n3": "Alianza para Business Analytics de SAP en la nube.",
+      "cli.olho": "QUIÉNES CONFÍAN EN SQLTECH",
+      "cli.titulo": "Grandes marcas, decisiones guiadas por datos",
+      "cli.sub": "De bancos y aseguradoras a la industria, el comercio, la salud y el gobierno — proyectos entregados en 16 sectores diferentes.",
+      "cli.alt": "Marcas atendidas por SQLTECH — entre ellas Itaú, Bradesco, Citibank, AmBev, Natura, Volkswagen, Nestlé, Johnson & Johnson, Toshiba, Sodexo, Seara, SKY y el Ayuntamiento de São Paulo.",
+      "cst.1v": "150+", "cst.1": "CLIENTES ACTIVOS",
+      "cst.2v": "30.000+", "cst.2": "USUARIOS ATENDIDOS",
+      "cst.3v": "16", "cst.3": "INDUSTRIAS",
+      "cst.4v": "28", "cst.4": "AÑOS EN EL MERCADO",
+      "cmp.olho": "03 · COMPETENCIAS TECNOLÓGICAS",
+      "cmp.titulo": "De 1998 a la era de la IA",
+      "cmp.lead": "Un stack que evoluciona desde hace casi tres décadas — siempre en la frontera de los datos y el analytics.",
+      "tl.1": "FUNDACIÓN", "tl.2": "DECISIÓN", "tl.3e": "Integración", "tl.3": "DATOS",
+      "tl.5": "AVANZADO", "tl.6": "ERA DE LA IA",
+      "tl.6s": "Ingeniería de datos moderna\nLLMs / IA Generativa\nAgentes de IA · RAG",
+      "srv.olho": "04 · NUESTROS SERVICIOS",
+      "srv.titulo": "Datos, BI y procesos",
+      "srv.a1": "— Migración de servidores",
+      "srv.a2": "— Instalación, configuración y soporte",
+      "srv.a3": "— Integración de sistemas heterogéneos",
+      "srv.a4": "— Rendimiento y tuning",
+      "srv.a5": "— Movimiento dinámico de datos",
+      "srv.a6": "— Alto volumen de datos (TB)",
+      "srv.b1": "— Consultoría de BI integral",
+      "srv.b2": "— Definición del modelo de negocio",
+      "srv.b3": "— Modelado relacional y multidimensional",
+      "srv.b4": "— Selección de tecnología",
+      "srv.b5": "— Implementación",
+      "srv.b6": "— Gestión del proyecto",
+      "srv.c1": "— Insights a partir de logs de eventos reales",
+      "srv.c2": "— Auditar, analizar y mejorar procesos",
+      "srv.c3": "— Visión de conformidad y desempeño",
+      "srv.c4": "— Identificación de cuellos de botella y retrabajo",
+      "srv.c5": "— Base factual para la automatización",
+      "srv.bd": "Análisis e interpretación de grandes volúmenes y variedad de datos — incluso no estructurados y de alta velocidad.",
+      "srv.bd1": "Estrategia", "srv.bd2": "Productividad",
+      "srv.bd3": "Reducción de costos", "srv.bd4": "Decisión inteligente",
+      "srv.iat": "Inteligencia Artificial aplicada",
+      "srv.iap": "Del caso de uso a producción — con gobernanza, seguridad e integración a los sistemas que ya usa.",
+      "srv.ial": "VER SOLUCIONES DE IA →",
+      "ia.olho": "05 · IA APLICADA",
+      "ia.titulo": "28 años<br>convirtiendo datos<br>en decisiones.",
+      "ia.lead": "Implementamos IA de punta a punta — del caso de uso a producción — con gobernanza, seguridad e integración a los sistemas que la empresa ya usa.",
+      "ia.a": "IA EN LA ATENCIÓN",
+      "ia.a1": "— Agentes por chat y voz (WhatsApp, sitio, teléfono) 24/7",
+      "ia.a2": "— Clasificación, calificación y enrutamiento automático",
+      "ia.a3": "— Secretaria virtual: agendamiento y recordatorios",
+      "ia.a4": "— Conectado a CRM, ERP y bases internas vía RAG",
+      "ia.a5": "— Escalamiento inteligente al humano",
+      "ia.a6": "— Resumen y análisis de sentimiento de las conversaciones",
+      "ia.b": "ANÁLISIS DE DOCUMENTOS",
+      "ia.b1": "— Extracción de facturas, contratos, propuestas y recibos",
+      "ia.b2": "— OCR + LLM para documentos digitalizados",
+      "ia.b3": "— Clasificación, validación y verificación automática",
+      "ia.b4": "— Verificación fiscal y apoyo al compliance",
+      "ia.b5": "— Extracción de cláusulas y riesgos en contratos",
+      "ia.b6": "— Búsqueda semántica en grandes acervos",
+      "ia.c": "IA ANALÍTICA",
+      "ia.c1": "— Analytics aumentado con insights en lenguaje natural",
+      "ia.c2": "— \"Pregunte a sus datos\" — BI conversacional (text-to-SQL)",
+      "ia.c3": "— Modelos predictivos: demanda, churn, morosidad, ingresos",
+      "ia.c4": "— Detección de anomalías y desvíos",
+      "ia.c5": "— AutoML para acelerar creación y despliegue",
+      "ia.c6": "— IA sobre process mining",
+      "ia.d": "ANÁLISIS DE PROCESOS",
+      "ia.d1": "— Descubrimiento automático del flujo real (ERP, CRM, SAP)",
+      "ia.d2": "— Identificación de cuellos de botella y retrabajo",
+      "ia.d3": "— Análisis de causa raíz explicado en lenguaje natural",
+      "ia.d4": "— Verificación de conformidad (compliance)",
+      "ia.d5": "— Recomendaciones de automatización priorizadas por impacto",
+      "ia.e": "AUTOMATIZACIÓN Y COPILOTOS",
+      "ia.e1": "— Orquestación de tareas y procesos con agentes",
+      "ia.e2": "— Copilotos por área: jurídico, financiero, comercial, operaciones",
+      "ia.e3": "— Transcripción y diarización de llamadas y reuniones",
+      "ia.e4": "— Informes automáticos a partir de los propios datos",
+      "ia.f": "LLMs EN PRODUCCIÓN",
+      "ia.f1": "— Base de conocimiento (RAG) sobre manuales y políticas",
+      "ia.f2": "— Integración vía API dentro de lo que el cliente ya usa",
+      "ia.f3": "— Gobernanza, seguridad y protección de datos",
+      "ia.f4": "— Monitoreo y evolución continua",
+      "met.titulo": "Cómo implementamos IA",
+      "met.lead": "Del caso de uso a producción — con integración segura y gobernanza en cada etapa.",
+      "met.1": "Descubrimiento y ROI", "met.1d": "Mapeo del caso de uso y del retorno esperado.",
+      "met.2": "Prueba de concepto", "met.2d": "Validación rápida con datos reales antes de escalar.",
+      "met.3": "Integración segura", "met.3d": "Conexión a los datos y sistemas que la empresa ya usa.",
+      "met.4": "Gobernanza y protección de datos", "met.4d": "Privacidad, control de calidad y seguridad.",
+      "met.5": "Producción y evolución", "met.5d": "Monitoreo y mejora continua en operación.",
+      "ct.olho": "06 · CONTÁCTENOS",
+      "ct.titulo": "Contacto",
+      "ct.nome": "Nombre", "ct.nomePh": "Nombre *",
+      "ct.email": "Correo electrónico", "ct.emailPh": "Correo *",
+      "ct.assunto": "Asunto", "ct.msg": "Mensaje",
+      "ct.enviar": "ENVIAR MENSAJE",
+      "ct.endereco": "Dirección", "ct.cidade": "São Paulo - SP, Brasil",
+      "ct.telefone": "Teléfono", "ct.tel": "Tel.:", "ct.fax": "Fax:",
+      "ct.mailAssunto": "Consulta desde el sitio", "ct.mailNome": "Nombre", "ct.mailEmail": "Correo",
+      "rod.desc": "Convirtamos los datos de su empresa en decisiones — con BI, ingeniería de datos e IA aplicada.",
+      "rod.c1": "Servicios", "rod.c1e": "› Ingeniería de Datos", "rod.c1f": "› IA Aplicada",
+      "rod.c2": "IA Aplicada",
+      "rod.c2a": "› IA en la atención", "rod.c2b": "› Análisis de documentos",
+      "rod.c2c": "› IA analítica", "rod.c2d": "› Análisis de procesos",
+      "rod.c2e": "› Copilotos por área", "rod.c2f": "› LLMs en producción",
+      "rod.news": "Reciba contenidos sobre datos, BI e IA aplicada al negocio.",
+      "rod.newsPh": "Su correo corporativo", "rod.inscrever": "Suscribirse",
+      "rod.copy": "© 2026 SQLTECH · DESDE 1998",
+      "rod.cidades": "SÃO PAULO · BRASILIA · EE. UU."
+    }
+  };
+
+  /* Le do HTML os textos em portugues, que sao a fonte de verdade. */
+  var metaDesc = document.querySelector('meta[name="description"]');
+  var PT = {
+    "meta.titulo": document.title,
+    "meta.desc": metaDesc ? metaDesc.content : "",
+    /* usados so na montagem do e-mail, nao aparecem na pagina */
+    "ct.mailAssunto": "Contato pelo site",
+    "ct.mailNome": "Nome",
+    "ct.mailEmail": "E-mail"
+  };
+
+  function guardar(seletor, attr, ler) {
+    Array.prototype.forEach.call(document.querySelectorAll(seletor), function (el) {
+      var chave = el.getAttribute(attr);
+      if (!(chave in PT)) PT[chave] = ler(el);
+    });
+  }
+  guardar("[data-i18n]", "data-i18n", function (el) { return el.textContent; });
+  guardar("[data-i18n-html]", "data-i18n-html", function (el) { return el.innerHTML; });
+  guardar("[data-i18n-ph]", "data-i18n-ph", function (el) { return el.getAttribute("placeholder"); });
+  guardar("[data-i18n-al]", "data-i18n-al", function (el) { return el.getAttribute("aria-label"); });
+  guardar("[data-i18n-alt]", "data-i18n-alt", function (el) { return el.getAttribute("alt"); });
+
+  var idioma = "pt";
+  var texto = function (chave) { return chave; };
+
+  function aplicarIdioma(novo) {
+    if (!TRAD[novo] && novo !== "pt") novo = "pt";
+    idioma = novo;
+    var dic = novo === "pt" ? PT : TRAD[novo];
+    texto = function (chave) {
+      var v = dic[chave];
+      return (v === undefined || v === null) ? PT[chave] : v; /* sem traducao: volta ao portugues */
+    };
+
+    function pintar(seletor, attr, escrever) {
+      Array.prototype.forEach.call(document.querySelectorAll(seletor), function (el) {
+        escrever(el, texto(el.getAttribute(attr)));
+      });
+    }
+    pintar("[data-i18n]", "data-i18n", function (el, v) {
+      el.textContent = v;
+      if (el.classList.contains("num-value") || el.classList.contains("cstat-value")) {
+        el.dataset.final = v; /* mantem o alvo do contador em dia */
+      }
+    });
+    pintar("[data-i18n-html]", "data-i18n-html", function (el, v) { el.innerHTML = v; });
+    pintar("[data-i18n-ph]", "data-i18n-ph", function (el, v) { el.setAttribute("placeholder", v); });
+    pintar("[data-i18n-al]", "data-i18n-al", function (el, v) { el.setAttribute("aria-label", v); });
+    pintar("[data-i18n-alt]", "data-i18n-alt", function (el, v) { el.setAttribute("alt", v); });
+
+    document.documentElement.lang = novo === "pt" ? "pt-BR" : (novo === "en" ? "en" : "es");
+    document.title = texto("meta.titulo");
+    if (metaDesc) metaDesc.content = texto("meta.desc");
+
+    Array.prototype.forEach.call(document.querySelectorAll(".lang-btn"), function (b) {
+      b.setAttribute("aria-current", b.dataset.lang === novo ? "true" : "false");
+    });
+
+    try { localStorage.setItem("sqltech-idioma", novo); } catch (e) {}
+  }
+
+  document.addEventListener("click", function (e) {
+    var botao = e.target.closest && e.target.closest(".lang-btn");
+    if (botao) aplicarIdioma(botao.dataset.lang);
+  });
+
+  /* Idioma inicial: o que a pessoa escolheu antes; senao, o do navegador;
+     senao, portugues. */
+  var escolhido = null;
+  try { escolhido = localStorage.getItem("sqltech-idioma"); } catch (e) {}
+  if (!escolhido) {
+    var navegador = (navigator.language || "pt").toLowerCase();
+    escolhido = navegador.indexOf("en") === 0 ? "en" : (navegador.indexOf("es") === 0 ? "es" : "pt");
+  }
+  aplicarIdioma(escolhido);
 
   /* --- rolagem suave para as âncoras internas --- */
   document.addEventListener("click", function (e) {
@@ -784,8 +1184,10 @@ Agentes de IA · RAG</div>
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var v = function (id) { return (document.getElementById(id).value || "").trim(); };
-      var assunto = v("c-assunto") || "Contato pelo site";
-      var corpo = "Nome: " + v("c-nome") + "\nE-mail: " + v("c-email") + "\n\n" + v("c-mensagem");
+      var assunto = v("c-assunto") || texto("ct.mailAssunto");
+      var corpo = texto("ct.mailNome") + ": " + v("c-nome")
+        + "\n" + texto("ct.mailEmail") + ": " + v("c-email")
+        + "\n\n" + v("c-mensagem");
       window.location.href = "mailto:contato@sqltech.com.br"
         + "?subject=" + encodeURIComponent(assunto)
         + "&body=" + encodeURIComponent(corpo);
@@ -862,9 +1264,10 @@ Agentes de IA · RAG</div>
   if (contadores.length && !semMovimento && "IntersectionObserver" in window) {
     var contar = function (el) {
       var original = el.textContent.trim();
-      var partes = original.match(/^([\d.]+)(.*)$/);
+      /* aceita separador de milhar de qualquer idioma: 30.000+ ou 30,000+ */
+      var partes = original.match(/^([\d.,]+)(.*)$/);
       if (!partes) return;
-      var destino = parseInt(partes[1].replace(/\./g, ""), 10);
+      var destino = parseInt(partes[1].replace(/[^\d]/g, ""), 10);
       if (!isFinite(destino)) return;
       var sufixo = partes[2] || "";
       var duracao = 1400;
@@ -872,11 +1275,12 @@ Agentes de IA · RAG</div>
       var passo = function (agora) {
         if (inicio === null) inicio = agora;
         var p = Math.min((agora - inicio) / duracao, 1);
-        if (p === 1) { el.textContent = original; return; } /* fecha no valor exato */
+        /* fecha no valor exato, relendo o alvo caso o idioma tenha mudado */
+        if (p === 1) { el.textContent = el.dataset.final || original; return; }
         /* desaceleracao suave com truncamento: numeros de um digito so
            alcancam o valor final no ultimo quadro, junto com os grandes */
         var suave = 1 - Math.pow(1 - p, 2);
-        el.textContent = Math.floor(destino * suave).toLocaleString("pt-BR") + sufixo;
+        el.textContent = Math.floor(destino * suave).toLocaleString(LOCALE[idioma]) + sufixo;
         requestAnimationFrame(passo);
       };
       requestAnimationFrame(passo);
