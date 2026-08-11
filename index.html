@@ -178,6 +178,29 @@
   .step-title { font-size: 14px; font-weight: 700; color: #123356; margin: 10px 0 8px; }
   .step-body { font-size: 12.5px; line-height: 1.8; color: #7a8899; }
 
+  /* ---------- CONTATO ---------- */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .sec-contato { background: #10294a; padding: 92px 72px; }
+  .contato-inner { max-width: 1100px; margin: 0 auto; }
+  .contato-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 56px; margin-top: 40px; }
+  .contato-col-title { font-family: 'Barlow Condensed', sans-serif; font-size: 27px; font-weight: 700; color: #fff; margin: 0 0 26px; letter-spacing: .02em; }
+  .contato-linha { font-size: 14.5px; line-height: 1.95; color: rgba(255,255,255,.62); margin: 0; }
+  .contato-link { color: rgba(255,255,255,.62); transition: color .25s ease; }
+  .contato-link:hover { color: #fff; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 26px; }
+  .campo input, .campo textarea {
+    width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.35);
+    padding: 10px 2px; color: #fff; font-family: Barlow, sans-serif; font-size: 14.5px;
+    outline: none; transition: border-color .25s ease; }
+  .campo textarea { resize: vertical; min-height: 86px; }
+  .campo input::placeholder, .campo textarea::placeholder { color: rgba(255,255,255,.5); }
+  .campo input:focus, .campo textarea:focus { border-bottom-color: #7fb2ff; }
+  .btn-enviar { margin-top: 32px; background: var(--accent); border: 0; color: #fff; padding: 14px 38px;
+    font-family: Barlow, sans-serif; font-size: 13.5px; font-weight: 700; letter-spacing: .18em; cursor: pointer;
+    transition: background .25s ease, transform .25s ease; }
+  .btn-enviar:hover { background: #0b4ea8; transform: translateY(-2px); }
+
   /* ---------- FOOTER ---------- */
   .footer { background: #07182d; padding: 74px 72px 46px; border-top: 4px solid var(--accent); }
   .foot-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.3fr; gap: 48px; }
@@ -211,6 +234,8 @@
     .steps { grid-template-columns: repeat(2, 1fr); }
     .foot-grid { grid-template-columns: 1fr 1fr; }
     .clientes { padding: 48px 32px 42px; margin-top: 56px; }
+    .contato-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contato-form-col { grid-column: 1 / -1; }
   }
   @media (max-width: 720px) {
     .hero { min-height: 620px; }
@@ -228,6 +253,7 @@
     .clientes-stats { grid-template-columns: repeat(2, 1fr); }
     .cstat:nth-child(2n) { border-right: 0; }
     .cstat:nth-child(-n+2) { border-bottom: 1px solid #e6ecf3; }
+    .contato-grid, .form-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -624,8 +650,64 @@ Agentes de IA · RAG</div>
     </div>
   </section>
 
+  <!-- CONTATO -->
+  <section id="contato" class="sec-contato" data-screen-label="Contato">
+    <div class="contato-inner">
+      <div class="ia-eyebrow">06 · FALE CONOSCO</div>
+      <div class="contato-grid">
+
+        <div class="contato-form-col">
+          <h2 class="contato-col-title">Contato</h2>
+          <form id="form-contato" novalidate>
+            <div class="form-row">
+              <div class="campo">
+                <label class="sr-only" for="c-nome">Nome</label>
+                <input id="c-nome" name="nome" type="text" placeholder="Nome *" required>
+              </div>
+              <div class="campo">
+                <label class="sr-only" for="c-email">E-mail</label>
+                <input id="c-email" name="email" type="email" placeholder="Email *" required>
+              </div>
+            </div>
+            <div class="form-row" style="grid-template-columns: 1fr">
+              <div class="campo">
+                <label class="sr-only" for="c-assunto">Assunto</label>
+                <input id="c-assunto" name="assunto" type="text" placeholder="Assunto">
+              </div>
+            </div>
+            <div class="campo">
+              <label class="sr-only" for="c-mensagem">Mensagem</label>
+              <textarea id="c-mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
+            </div>
+            <button class="btn-enviar" type="submit">ENVIAR MENSAGEM</button>
+          </form>
+        </div>
+
+        <div>
+          <h2 class="contato-col-title">Endereço</h2>
+          <p class="contato-linha">
+            Rua Padre Estevão Pernet, 718<br>
+            cj 1512<br>
+            Tatuapé<br>
+            São Paulo - SP<br>
+            <a class="contato-link" href="mailto:contato@sqltech.com.br">contato@sqltech.com.br</a>
+          </p>
+        </div>
+
+        <div>
+          <h2 class="contato-col-title">Telefone</h2>
+          <p class="contato-linha">
+            Tel: <a class="contato-link" href="tel:+551134377070">55-11-3437-7070</a><br>
+            Fax: 55-11-3437-7075
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer id="contato" class="footer" data-screen-label="Footer">
+  <footer class="footer" data-screen-label="Footer">
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
@@ -698,6 +780,27 @@ Agentes de IA · RAG</div>
     if (typeof doc.scrollTo === "function") doc.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
     else doc.scrollTop = Math.max(y, 0);
   });
+
+  /* --- formulário de contato ---
+     O site é estático e não tem servidor, então não há para onde enviar o
+     formulário. O botão monta a mensagem e abre o programa de e-mail do
+     visitante já com tudo preenchido. Para receber as mensagens direto na
+     caixa, sem depender do cliente de e-mail dele, é preciso um serviço de
+     formulário (Formspree, Web3Forms e afins) e trocar este bloco pelo
+     "action" do serviço. */
+  var form = document.getElementById("form-contato");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var v = function (id) { return (document.getElementById(id).value || "").trim(); };
+      var assunto = v("c-assunto") || "Contato pelo site";
+      var corpo = "Nome: " + v("c-nome") + "\nE-mail: " + v("c-email") + "\n\n" + v("c-mensagem");
+      window.location.href = "mailto:contato@sqltech.com.br"
+        + "?subject=" + encodeURIComponent(assunto)
+        + "&body=" + encodeURIComponent(corpo);
+    });
+  }
 
   /* --- parallax do hero --- */
   var hero = document.querySelector("[data-hero-img]");
