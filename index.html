@@ -81,6 +81,9 @@
   .numbers { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #e6ecf3; border-left: 1px solid #e6ecf3; }
   .num-cell { border-right: 1px solid #e6ecf3; border-bottom: 1px solid #e6ecf3; padding: 26px 18px; transition: background .3s ease; }
   .num-cell:hover { background: #f3f6fa; }
+  /* tabular-nums deixa todo digito com a mesma largura, entao o numero nao
+     treme enquanto a contagem sobe */
+  .num-value, .cstat-value { font-variant-numeric: tabular-nums; }
   .num-value { font-family: 'Barlow Condensed', sans-serif; font-size: 35px; font-weight: 700; color: #123356; line-height: 1; }
   .num-label { font-size: 12px; color: #8494a6; margin-top: 8px; line-height: 1.5; }
 
@@ -849,6 +852,46 @@ Agentes de IA · RAG</div>
 
   /* rede de segurança: nada fica invisível por mais de 4s */
   setTimeout(function () { nodes.forEach(show); }, 4000);
+
+  /* --- contagem progressiva dos indicadores ---
+     Os valores finais ficam escritos no HTML; o script apenas conta ate eles
+     quando entram na tela. Se o script nao rodar, os numeros ja estao la. */
+  var contadores = [].slice.call(document.querySelectorAll(".num-value, .cstat-value"));
+  var semMovimento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (contadores.length && !semMovimento && "IntersectionObserver" in window) {
+    var contar = function (el) {
+      var original = el.textContent.trim();
+      var partes = original.match(/^([\d.]+)(.*)$/);
+      if (!partes) return;
+      var destino = parseInt(partes[1].replace(/\./g, ""), 10);
+      if (!isFinite(destino)) return;
+      var sufixo = partes[2] || "";
+      var duracao = 1400;
+      var inicio = null;
+      var passo = function (agora) {
+        if (inicio === null) inicio = agora;
+        var p = Math.min((agora - inicio) / duracao, 1);
+        if (p === 1) { el.textContent = original; return; } /* fecha no valor exato */
+        /* desaceleracao suave com truncamento: numeros de um digito so
+           alcancam o valor final no ultimo quadro, junto com os grandes */
+        var suave = 1 - Math.pow(1 - p, 2);
+        el.textContent = Math.floor(destino * suave).toLocaleString("pt-BR") + sufixo;
+        requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    };
+
+    var obsNum = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        obsNum.unobserve(e.target);
+        contar(e.target);
+      });
+    }, { rootMargin: "0px 0px -12% 0px" });
+
+    contadores.forEach(function (el) { obsNum.observe(el); });
+  }
 })();
 </script>
 </body>
