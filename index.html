@@ -185,6 +185,21 @@
   .step-title { font-size: 14px; font-weight: 700; color: #123356; margin: 10px 0 8px; }
   .step-body { font-size: 12.5px; line-height: 1.8; color: #7a8899; }
 
+  /* ---------- MATERIAL DE CAPTAÇÃO ---------- */
+  .sec-material { background: #f3f6fa; padding: 88px 72px; }
+  .material-card { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center; background: #fff; border: 1px solid #dce7f3; box-shadow: 0 22px 50px rgba(16,44,78,.10); padding: 52px 56px; }
+  .material-card h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 38px; line-height: 1.12; color: #123356; margin: 12px 0 18px; }
+  .material-lead { font-size: 14.5px; line-height: 1.9; color: #607086; margin: 0; max-width: 650px; }
+  .material-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .material-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 25px; border: 1px solid var(--accent); font-size: 12.5px; font-weight: 700; letter-spacing: .1em; transition: all .25s ease; }
+  .material-btn--primary { background: var(--accent); color: #fff; }
+  .material-btn--primary:hover { background: #0b4ea8; border-color: #0b4ea8; transform: translateY(-2px); }
+  .material-btn--secondary { background: #fff; color: var(--accent); }
+  .material-btn--secondary:hover { background: #edf5ff; transform: translateY(-2px); }
+  .material-points { display: grid; gap: 14px; }
+  .material-point { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; font-size: 13px; line-height: 1.55; color: #43556d; }
+  .material-point span:first-child { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; background: #e8f2ff; color: var(--accent); font-weight: 700; }
+
   /* ---------- CONTATO ---------- */
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   .sec-contato { background: #10294a; padding: 92px 72px; }
@@ -196,13 +211,18 @@
   .contato-link:hover { color: #fff; }
 
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 26px; }
-  .campo input, .campo textarea {
+  .campo input, .campo textarea, .campo select {
     width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(255,255,255,.35);
     padding: 10px 2px; color: #fff; font-family: Barlow, sans-serif; font-size: 14.5px;
     outline: none; transition: border-color .25s ease; }
   .campo textarea { resize: vertical; min-height: 86px; }
+  .campo select { appearance: none; cursor: pointer; padding-right: 28px;
+    background-image: linear-gradient(45deg, transparent 50%, rgba(255,255,255,.8) 50%), linear-gradient(135deg, rgba(255,255,255,.8) 50%, transparent 50%);
+    background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+  .campo select option { color: #123356; background: #fff; }
   .campo input::placeholder, .campo textarea::placeholder { color: rgba(255,255,255,.5); }
-  .campo input:focus, .campo textarea:focus { border-bottom-color: #7fb2ff; }
+  .campo input:focus, .campo textarea:focus, .campo select:focus { border-bottom-color: #7fb2ff; }
+  .form-note { margin: 14px 0 0; max-width: 620px; font-size: 11.5px; line-height: 1.6; color: rgba(255,255,255,.45); }
   .btn-enviar { margin-top: 32px; background: var(--accent); border: 0; color: #fff; padding: 14px 38px;
     font-family: Barlow, sans-serif; font-size: 13.5px; font-weight: 700; letter-spacing: .18em; cursor: pointer;
     transition: background .25s ease, transform .25s ease; }
@@ -229,10 +249,10 @@
 
   /* ---------- RESPONSIVO ---------- */
   @media (max-width: 1080px) {
-    .topbar, .nav, .svc-strip, .sec-empresa, .sec-mercado, .sec-servicos, .sec-ia, .sec-metodo, .footer { padding-left: 32px; padding-right: 32px; }
+    .topbar, .nav, .svc-strip, .sec-empresa, .sec-mercado, .sec-servicos, .sec-ia, .sec-metodo, .sec-material, .sec-contato, .footer { padding-left: 32px; padding-right: 32px; }
     .nav-grid { grid-template-columns: repeat(4, 1fr); }
     .svc-grid { grid-template-columns: repeat(3, 1fr); }
-    .mercado, .about, .ia-inner, .duo { grid-template-columns: 1fr; gap: 40px; }
+    .mercado, .about, .ia-inner, .duo, .material-card { grid-template-columns: 1fr; gap: 40px; }
     .press, .offer, .ai-grid { grid-template-columns: repeat(2, 1fr); }
     .timeline { grid-template-columns: repeat(3, 1fr); }
     .steps { grid-template-columns: repeat(2, 1fr); }
@@ -259,6 +279,8 @@
     .cstat:nth-child(2n) { border-right: 0; }
     .cstat:nth-child(-n+2) { border-bottom: 1px solid #e6ecf3; }
     .contato-grid, .form-row { grid-template-columns: 1fr; }
+    .material-card { padding: 38px 24px; }
+    .material-card h2 { font-size: 31px; }
   }
 </style>
 </head>
@@ -660,10 +682,30 @@ Agentes de IA · RAG</div>
     </div>
   </section>
 
+  <!-- MATERIAL -->
+  <section id="checklist" class="sec-material" data-screen-label="Checklist para processos com IA">
+    <div class="material-card">
+      <div>
+        <div class="eyebrow" data-i18n="mat.olho">06 · GUIA PRÁTICO PARA GESTORES</div>
+        <h2 data-i18n="mat.titulo">Antes de automatizar: 12 perguntas para escolher seu primeiro processo de IA</h2>
+        <p class="material-lead" data-i18n="mat.lead">Use o checklist para delimitar o problema, localizar os dados, mapear exceções e definir como o resultado será medido.</p>
+        <div class="material-actions">
+          <a class="material-btn material-btn--primary" href="output/pdf/sqltech-checklist-primeiro-processo-ia.pdf" download data-i18n="mat.baixar">BAIXAR CHECKLIST</a>
+          <a class="material-btn material-btn--secondary js-avaliar" href="#contato" data-i18n="mat.conversar">AVALIAR UM PROCESSO</a>
+        </div>
+      </div>
+      <div class="material-points">
+        <div class="material-point"><span>1</span><span data-i18n="mat.p1">Escolha uma rotina específica e dimensione o trabalho atual.</span></div>
+        <div class="material-point"><span>2</span><span data-i18n="mat.p2">Identifique dados, regras e exceções antes do piloto.</span></div>
+        <div class="material-point"><span>3</span><span data-i18n="mat.p3">Defina responsável, métrica e critério de avanço.</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section id="contato" class="sec-contato" data-screen-label="Contato">
     <div class="contato-inner">
-      <div class="ia-eyebrow" data-i18n="ct.olho">06 · FALE CONOSCO</div>
+      <div class="ia-eyebrow" data-i18n="ct.olho">07 · FALE CONOSCO</div>
       <div class="contato-grid">
 
         <div class="contato-form-col">
@@ -679,6 +721,25 @@ Agentes de IA · RAG</div>
                 <input id="c-email" name="email" type="email" placeholder="Email *" data-i18n-ph="ct.emailPh" required>
               </div>
             </div>
+            <div class="form-row">
+              <div class="campo">
+                <label class="sr-only" for="c-empresa" data-i18n="ct.empresa">Empresa</label>
+                <input id="c-empresa" name="empresa" type="text" placeholder="Empresa" data-i18n-ph="ct.empresa">
+              </div>
+              <div class="campo">
+                <label class="sr-only" for="c-interesse" data-i18n="ct.interesse">Tema de interesse</label>
+                <select id="c-interesse" name="interesse" required aria-label="Tema de interesse" data-i18n-al="ct.interesse">
+                  <option value="" data-i18n="ct.opcao">Selecione o tema *</option>
+                  <option value="Avaliação de processo com IA" data-i18n="ct.i1">Avaliação de processo com IA</option>
+                  <option value="IA no atendimento" data-i18n="ct.i2">IA no atendimento</option>
+                  <option value="IA documental" data-i18n="ct.i3">IA documental</option>
+                  <option value="Process Mining" data-i18n="ct.i4">Process Mining</option>
+                  <option value="BI e Engenharia de Dados" data-i18n="ct.i5">BI e Engenharia de Dados</option>
+                  <option value="Database Services" data-i18n="ct.i6">Database Services</option>
+                  <option value="Outro" data-i18n="ct.i7">Outro</option>
+                </select>
+              </div>
+            </div>
             <div class="form-row" style="grid-template-columns: 1fr">
               <div class="campo">
                 <label class="sr-only" for="c-assunto" data-i18n="ct.assunto">Assunto</label>
@@ -690,6 +751,7 @@ Agentes de IA · RAG</div>
               <textarea id="c-mensagem" name="mensagem" placeholder="Mensagem" data-i18n-ph="ct.msg" required></textarea>
             </div>
             <button class="btn-enviar" type="submit" data-i18n="ct.enviar">ENVIAR MENSAGEM</button>
+            <p class="form-note" data-i18n="ct.nota">Ao enviar, seu aplicativo de e-mail será aberto com os dados preenchidos para contato@sqltech.com.br.</p>
           </form>
         </div>
 
@@ -750,13 +812,9 @@ Agentes de IA · RAG</div>
         </div>
       </div>
       <div class="news">
-        <div class="foot-col-title">Newsletter</div>
-        <p data-i18n="rod.news">Receba conteúdos sobre dados, BI e IA aplicada ao negócio.</p>
-        <div class="news-form">
-          <input class="news-input" type="email" placeholder="Seu e-mail corporativo"
-                 data-i18n-ph="rod.newsPh" data-i18n-al="rod.newsPh" aria-label="Seu e-mail corporativo">
-          <button class="news-btn" type="button" data-i18n-al="rod.inscrever" aria-label="Inscrever">→</button>
-        </div>
+        <div class="foot-col-title" data-i18n="rod.guia">Guia gratuito</div>
+        <p data-i18n="rod.news">12 perguntas para escolher seu primeiro processo de IA.</p>
+        <a class="material-btn material-btn--primary" href="output/pdf/sqltech-checklist-primeiro-processo-ia.pdf" download data-i18n="rod.baixar">BAIXAR CHECKLIST</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -909,23 +967,36 @@ Agentes de IA · RAG</div>
       "met.3": "Secure integration", "met.3d": "Connection to the data and systems the company already uses.",
       "met.4": "Governance & data protection", "met.4d": "Privacy, quality control and security.",
       "met.5": "Production & evolution", "met.5d": "Monitoring and continuous improvement in operation.",
-      "ct.olho": "06 · GET IN TOUCH",
+      "mat.olho": "06 · PRACTICAL GUIDE FOR MANAGERS",
+      "mat.titulo": "Before automating: 12 questions to choose your first AI process",
+      "mat.lead": "Use the checklist to define the problem, locate the data, map exceptions and decide how the result will be measured.",
+      "mat.baixar": "DOWNLOAD CHECKLIST", "mat.conversar": "ASSESS A PROCESS",
+      "mat.p1": "Choose a specific routine and estimate the current workload.",
+      "mat.p2": "Identify data, rules and exceptions before the pilot.",
+      "mat.p3": "Define an owner, a metric and a criterion for moving forward.",
+      "ct.olho": "07 · GET IN TOUCH",
       "ct.titulo": "Contact",
       "ct.nome": "Name", "ct.nomePh": "Name *",
       "ct.email": "Email", "ct.emailPh": "Email *",
+      "ct.empresa": "Company", "ct.interesse": "Topic of interest",
+      "ct.opcao": "Select a topic *", "ct.i1": "AI process assessment",
+      "ct.i2": "AI in customer service", "ct.i3": "Document AI", "ct.i4": "Process Mining",
+      "ct.i5": "BI and Data Engineering", "ct.i6": "Database Services", "ct.i7": "Other",
       "ct.assunto": "Subject", "ct.msg": "Message",
       "ct.enviar": "SEND MESSAGE",
+      "ct.nota": "When you submit, your email application will open with the information filled in for contato@sqltech.com.br.",
       "ct.endereco": "Address", "ct.cidade": "São Paulo - SP, Brazil",
       "ct.telefone": "Phone", "ct.tel": "Phone:", "ct.fax": "Fax:",
       "ct.mailAssunto": "Website enquiry", "ct.mailNome": "Name", "ct.mailEmail": "Email",
+      "ct.mailEmpresa": "Company", "ct.mailInteresse": "Topic", "ct.mailOrigem": "Source",
       "rod.desc": "Let's turn your company's data into decisions — with BI, data engineering and applied AI.",
       "rod.c1": "Services", "rod.c1e": "› Data Engineering", "rod.c1f": "› Applied AI",
       "rod.c2": "Applied AI",
       "rod.c2a": "› AI in customer service", "rod.c2b": "› Document analysis",
       "rod.c2c": "› Analytical AI", "rod.c2d": "› Process analysis",
       "rod.c2e": "› Copilots by area", "rod.c2f": "› LLMs in production",
-      "rod.news": "Get content about data, BI and AI applied to business.",
-      "rod.newsPh": "Your work email", "rod.inscrever": "Subscribe",
+      "rod.guia": "Free guide", "rod.news": "12 questions to choose your first AI process.",
+      "rod.baixar": "DOWNLOAD CHECKLIST",
       "rod.copy": "© 2026 SQLTECH · SINCE 1998",
       "rod.cidades": "SÃO PAULO · BRASÍLIA · USA"
     },
@@ -1058,23 +1129,36 @@ Agentes de IA · RAG</div>
       "met.3": "Integración segura", "met.3d": "Conexión a los datos y sistemas que la empresa ya usa.",
       "met.4": "Gobernanza y protección de datos", "met.4d": "Privacidad, control de calidad y seguridad.",
       "met.5": "Producción y evolución", "met.5d": "Monitoreo y mejora continua en operación.",
-      "ct.olho": "06 · CONTÁCTENOS",
+      "mat.olho": "06 · GUÍA PRÁCTICA PARA GESTORES",
+      "mat.titulo": "Antes de automatizar: 12 preguntas para elegir su primer proceso de IA",
+      "mat.lead": "Use el checklist para delimitar el problema, localizar los datos, mapear excepciones y definir cómo se medirá el resultado.",
+      "mat.baixar": "DESCARGAR CHECKLIST", "mat.conversar": "EVALUAR UN PROCESO",
+      "mat.p1": "Elija una rutina específica y dimensione el trabajo actual.",
+      "mat.p2": "Identifique datos, reglas y excepciones antes del piloto.",
+      "mat.p3": "Defina responsable, métrica y criterio de avance.",
+      "ct.olho": "07 · CONTÁCTENOS",
       "ct.titulo": "Contacto",
       "ct.nome": "Nombre", "ct.nomePh": "Nombre *",
       "ct.email": "Correo electrónico", "ct.emailPh": "Correo *",
+      "ct.empresa": "Empresa", "ct.interesse": "Tema de interés",
+      "ct.opcao": "Seleccione el tema *", "ct.i1": "Evaluación de proceso con IA",
+      "ct.i2": "IA en la atención", "ct.i3": "IA documental", "ct.i4": "Process Mining",
+      "ct.i5": "BI e Ingeniería de Datos", "ct.i6": "Database Services", "ct.i7": "Otro",
       "ct.assunto": "Asunto", "ct.msg": "Mensaje",
       "ct.enviar": "ENVIAR MENSAJE",
+      "ct.nota": "Al enviar, su aplicación de correo se abrirá con los datos completados para contato@sqltech.com.br.",
       "ct.endereco": "Dirección", "ct.cidade": "São Paulo - SP, Brasil",
       "ct.telefone": "Teléfono", "ct.tel": "Tel.:", "ct.fax": "Fax:",
       "ct.mailAssunto": "Consulta desde el sitio", "ct.mailNome": "Nombre", "ct.mailEmail": "Correo",
+      "ct.mailEmpresa": "Empresa", "ct.mailInteresse": "Tema", "ct.mailOrigem": "Origen",
       "rod.desc": "Convirtamos los datos de su empresa en decisiones — con BI, ingeniería de datos e IA aplicada.",
       "rod.c1": "Servicios", "rod.c1e": "› Ingeniería de Datos", "rod.c1f": "› IA Aplicada",
       "rod.c2": "IA Aplicada",
       "rod.c2a": "› IA en la atención", "rod.c2b": "› Análisis de documentos",
       "rod.c2c": "› IA analítica", "rod.c2d": "› Análisis de procesos",
       "rod.c2e": "› Copilotos por área", "rod.c2f": "› LLMs en producción",
-      "rod.news": "Reciba contenidos sobre datos, BI e IA aplicada al negocio.",
-      "rod.newsPh": "Su correo corporativo", "rod.inscrever": "Suscribirse",
+      "rod.guia": "Guía gratuita", "rod.news": "12 preguntas para elegir su primer proceso de IA.",
+      "rod.baixar": "DESCARGAR CHECKLIST",
       "rod.copy": "© 2026 SQLTECH · DESDE 1998",
       "rod.cidades": "SÃO PAULO · BRASILIA · EE. UU."
     }
@@ -1088,7 +1172,10 @@ Agentes de IA · RAG</div>
     /* usados so na montagem do e-mail, nao aparecem na pagina */
     "ct.mailAssunto": "Contato pelo site",
     "ct.mailNome": "Nome",
-    "ct.mailEmail": "E-mail"
+    "ct.mailEmail": "E-mail",
+    "ct.mailEmpresa": "Empresa",
+    "ct.mailInteresse": "Tema",
+    "ct.mailOrigem": "Origem"
   };
 
   function guardar(seletor, attr, ler) {
@@ -1173,21 +1260,36 @@ Agentes de IA · RAG</div>
   });
 
   /* --- formulário de contato ---
-     O site é estático e não tem servidor, então não há para onde enviar o
-     formulário. O botão monta a mensagem e abre o programa de e-mail do
-     visitante já com tudo preenchido. Para receber as mensagens direto na
-     caixa, sem depender do cliente de e-mail dele, é preciso um serviço de
-     formulário (Formspree, Web3Forms e afins) e trocar este bloco pelo
-     "action" do serviço. */
+     O site é estático. O botão abre o programa de e-mail do visitante com
+     tema, empresa, mensagem e origem da campanha já preenchidos. */
   var form = document.getElementById("form-contato");
   if (form) {
+    var params = new URLSearchParams(window.location.search);
+    var chavesOrigem = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+    var origem = chavesOrigem.map(function (chave) {
+      var valor = params.get(chave);
+      return valor ? chave + "=" + valor : "";
+    }).filter(Boolean).join(" | ") || "site_direto";
+
+    document.addEventListener("click", function (e) {
+      var avaliar = e.target.closest && e.target.closest(".js-avaliar");
+      if (!avaliar) return;
+      var interesse = document.getElementById("c-interesse");
+      var assunto = document.getElementById("c-assunto");
+      if (interesse) interesse.value = "Avaliação de processo com IA";
+      if (assunto && !assunto.value) assunto.value = "Avaliação de processo com IA";
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var v = function (id) { return (document.getElementById(id).value || "").trim(); };
-      var assunto = v("c-assunto") || texto("ct.mailAssunto");
+      var assunto = v("c-assunto") || v("c-interesse") || texto("ct.mailAssunto");
       var corpo = texto("ct.mailNome") + ": " + v("c-nome")
         + "\n" + texto("ct.mailEmail") + ": " + v("c-email")
+        + "\n" + texto("ct.mailEmpresa") + ": " + (v("c-empresa") || "-")
+        + "\n" + texto("ct.mailInteresse") + ": " + v("c-interesse")
+        + "\n" + texto("ct.mailOrigem") + ": " + origem
         + "\n\n" + v("c-mensagem");
       window.location.href = "mailto:contato@sqltech.com.br"
         + "?subject=" + encodeURIComponent(assunto)
